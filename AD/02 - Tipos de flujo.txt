@@ -1,0 +1,50 @@
+*Flujos Byte (8 bits)
+	InputStream
+	OutputStream
+
+*Flujos de caracteres (16 bits)
+	FileReader		}
+	FileWriter		}
+	charArrayReader		}
+	charArrayWriter		}--> Para caracteres
+				}
+	BufferReader		}
+	BufferWritter		}
+
+-Acceso directo o aleatorio
+	RandomAccesFile
+
+*Operaciones sobre ficheros
+Creación, apertura, lectura, escritura y cierre.
+
+
+Altas-----------> Se pone en el ultimo lugar
+Bajas-----------> Copia los datos menos el que se desea borrar en otro fichero
+Modificaciones--> Copia los datos menos el que se desea modificar en otro fichero
+Consultas-------> Se traslada de uno al siguiente hasta que acaba
+
+Altas-----------> Lo intenta poner en el sitio correspondiente y si no, lo coloca en un fichero excedente
+Bajas-----------> Fisica o Logica
+Modificacion----> 
+
+Ventajas: 
+-No desperdicia espacio en huecos
+-Rapido accediendo al siguiente
+
+Desventajas:
+-No es adecuado para aplicaciones interactivas
+-Pueden quedar huecos, ocupando algo más de lo necesario
+
+
+
+Dos tipos de fichero: byte y caracter
+Según su acceso: secuencial o aleatorio
+
+Clases para gestión del flujo(Steam)	
+	FileReader:
+		int read()
+		int read(char[] buf)
+		int read(char[] buf, int desplazamiento, int n)
+
+	*FileReader &FileWriter --> IOException (try-catch)
+
