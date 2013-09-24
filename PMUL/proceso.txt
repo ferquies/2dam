@@ -1,0 +1,7 @@
+1. Instalación MV Java
+2. Instalación Eclipse (versión Java)
+3. Instalación Android SDK (Google)
+4. Módulo de Android para Eclipse (ADT)
+5. Configuración ADT
+6. Descargar targets
+7. Creación de los dispositivos virtuales

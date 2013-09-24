@@ -14,7 +14,7 @@ class ej13 {
 				edad = dis.readInt();
 				System.out.println("Nombre: " + nombre + "\nEdad: " + edad);
 			}
-		} catch(EOFException fnfe) { dis.close(); }
+		} catch(EOFException e) { dis.close(); }
 	}
 }
 	
