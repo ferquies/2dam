@@ -1,0 +1,5 @@
+int *arr = 0;
+arr = malloc(np * sizeof(int));
+if(arr != 0) {
+	free(arr);
+}
