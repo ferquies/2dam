@@ -1,94 +1,88 @@
-/* Leemos de dos ficheros xml y lo volcamos en un tercer fichero ordenados por id*/
-
-import java.io.*;
-import org.w3c.dom.*;
+import java.io.File;
 import javax.xml.parsers.*;
 import javax.xml.transform.*;
 import javax.xml.transform.dom.*;
 import javax.xml.transform.stream.*;
-public class ej20{
-	public static void main(String args[])
-		{
-			int id1,id2,dep;
-			double salario;
-			String apellido;
-			int a=0,b=0;
-			
-			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-			try{
-				DocumentBuilder fsalida = factory.newDocumentBuilder();
-				DOMImplementation imple = fsalida.getDOMImplementation();
-				Document dsalida = imple.createDocument(null,"Empleados",null);
-				dsalida.setXmlVersion("1.0");
-				Source source = new DOMSource(dsalida);
-				Result result = new StreamResult(new java.io.File("fichero3.xml"));
-				Transformer transformer = TransformerFactory.newInstance().newTransformer();
-				transformer.transform(source,result);
-				
-				DocumentBuilder builder_f1 = factory.newDocumentBuilder();
-				DocumentBuilder builder_f2 = factory.newDocumentBuilder();
-				Document document_f1 = builder_f1.parse(new File("fichero1.xml"));
-				Document document_f2 = builder_f1.parse(new File("fichero2.xml"));				
-				document_f1.getDocumentElement().normalize();
-				
-				Element elemento1 = (Element)emple1;
-				Element elemento2 = (Element)emple2;
-				id1 = Integer.parseInt(getNodo("id",elemento1));
-				id2 = Integer.parseInt(getNodo("id",elemento2));
-				
-				NodeList empleados_f1 = document_f1.getElementsByTagName("empleado");
-				NodeList empleados_f2 = document_f2.getElementsByTagName("empleado");
-				
-				
-				if(id1 < id2)
-				{
-					for(int i = 0; i < empleados_f1.getLength(); i++)
-					{
-						Node emple1 = empleados_f1.item(a);
-						if(emple1.getNodeType() == Node.ELEMENT_NODE){
-							elemento1 = (Element) emple1;
-							System.out.println("ID"+getNodo("id",elemento1));
-							System.out.println("Apellido"+getNodo("apellido",elemento1));
-							System.out.println("Dep"+getNodo("dep",elemento1));
-							System.out.println("Salario"+getNodo("salario",elemento1));
-						}
-						a++;
-					}
-				}
-				else
-				{
-					for(int i = 0; i < empleados_f1.getLength(); i++)
-					{
-						Node emple2 = empleados_f2.item(b);
-						if(emple2.getNodeType() == Node.ELEMENT_NODE){
-							elemento2 = (Element) emple2;
-							System.out.println("ID"+getNodo("id",elemento2));
-							System.out.println("Apellido"+getNodo("apellido",elemento2));
-							System.out.println("Dep"+getNodo("dep",elemento2));
-							System.out.println("Salario"+getNodo("salario",elemento2));
-						}
-						b++;
-					}
-				}
-					
-						
-				
-				
-			}catch(Exception e){
-				e.printStackTrace();
-			}
-		}
-		private static String getNodo(String etiqueta,Element elem)
-		{
-			NodeList  nodo = elem.getElementsByTagName(etiqueta).item(0).getChildNodes();
-			Node valornodo = (Node) nodo.item(0);
-			return valornodo.getNodeValue();
-		}
-		static void CrearElemento(String datoEmple,String valor,Element raiz, Document document){
-			Element elem = document.createElement(datoEmple);
-			Text text = document.createTextNode(valor);
-			raiz.appendChild(elem);
-			elem.appendChild(text);
-		}
-}
+import org.w3c.dom.*;
+
+class ej20 {
+	private static String getNodo(String etiqueta, Element elem) {
+		NodeList nodo = elem.getElementsByTagName(etiqueta).item(0).getChildNodes();
+		Node valornodo = (Node) nodo.item(0);
+		return valornodo.getNodeValue();
+	}
 	
+	static void CrearElemento(String datoEmpe, String valor, Element raiz, Document document) {
+		Element elem = document.createElement(datoEmpe);
+		Text text = document.createTextNode(valor);
+		raiz.appendChild(elem);
+		elem.appendChild(text);
+	}
+	
+	static void EscribirFich(Element ele) { }
+	
+	public static void main(String []args) {
+		try {
+			DocumentBuilderFactory factory1 = DocumentBuilderFactory.newInstance();
+			DocumentBuilder builder1 = factory1.newDocumentBuilder();
+			Document documento1 = builder1.parse(new File("fichero1.xml"));
+			
+			DocumentBuilderFactory factory2 = DocumentBuilderFactory.newInstance();
+			DocumentBuilder builder2 = factory2.newDocumentBuilder();
+			Document documento2 = builder2.parse(new File("fichero2.xml"));
+			
+			DocumentBuilderFactory factory3 = DocumentBuilderFactory.newInstance();
+			DocumentBuilder builder3 = factory3.newDocumentBuilder();
+			DOMImplementation implementation = builder3.getDOMImplementation();
+			Document document3 = implementation.createDocument(null, "Empleados", null);
+			document3.setXmlVersion("1.0");
+			
+			int i = 0, j = 0;
+			
+			NodeList empleados1 = documento1.getElementsByTagName("empleado");
+			
+			
+			NodeList empleados2 = documento2.getElementsByTagName("empleado");
+			
+			Node emple1 = empleados1.item(i);
+			Element elemento1 = (Element) emple1;
+			Node emple2 = empleados2.item(j);
+			Element elemento2 = (Element) emple2;
+			
+			
+			while(i < empleados1.getLength() || j < empleados2.getLength()) {
+				if(Integer.parseInt(getNodo("id", elemento1)) < Integer.parseInt(getNodo("id", elemento2))) {
+					EscribirFich(elemento1);
+					i++;
+					emple1 = empleados1.item(i);
+					elemento1 = (Element) emple1;
+				} else {
+					EscribirFich(elemento2);
+					j++;
+					emple2 = empleados2.item(j);
+					elemento2 = (Element) emple2;
+				}
+			}
+			while(i < empleados1.getLength()) {
+				EscribirFich(elemento1);
+				i++;
+				emple1 = empleados1.item(i);
+				elemento1 = (Element) emple1;
+			}
+			while(j < empleados2.getLength()) {
+				EscribirFich(elemento2);
+				j++;
+				emple2 = empleados2.item(j);
+				elemento2 = (Element) emple2;
+			}
+
+			TransformerFactory transformerFactory = TransformerFactory.newInstance();
+			Transformer transformer = transformerFactory.newTransformer();
+			DOMSource source = new DOMSource(document3);
+			StreamResult result = new StreamResult(new File("fichero_destino.xml"));
+			transformer.transform(source, result);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}

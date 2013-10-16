@@ -7,7 +7,7 @@ public class ej15{
 	{
 		try{
 			
-			File f = new File("f_ej14.txt");
+			File f = new File("tarea4.dat");
 			//-Declara el fichero de acceso aleatorio con permisos r-//
 			RandomAccessFile raf = new RandomAccessFile(f,"r");
 			
