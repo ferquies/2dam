@@ -3,7 +3,7 @@
 #include <sys/times.h>
 
 int main(int argc, char **argv) {
-	int N = 1000000;
+	int N = 100000;
 	long *array_dinamico = (long*) malloc(N*sizeof(long));
 	long mayor = 0;
 	int i, x;
