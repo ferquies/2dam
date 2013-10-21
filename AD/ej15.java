@@ -6,36 +6,29 @@ public class ej15{
 	public static void main(String args[])
 	{
 		try{
-			
 			File f = new File("tarea4.dat");
-			//-Declara el fichero de acceso aleatorio con permisos r-//
 			RandomAccessFile raf = new RandomAccessFile(f,"r");
 			
 			int id,dep,pos;
 			double salario;
 			char apellido[] = new char[10],aux;
 			
-			pos = 0; //Lo ponemos a 0 para situarnos al principio 
+			pos = 0;
 			
-			for(;;)
-			{
-				raf.seek(pos);//Nos posicionamos en posicion
-				id = raf.readInt();//Obtenemos la id del empleado
-				for( int i = 0; i < apellido.length; i++)
-				{
-					aux = raf.readChar(); //Recorro uno a uno los caracteres del apellido
-					apellido[i] = aux; //Los voy guardando en el array
+			for(int x = 0; x < 7; x++) {
+				raf.seek(pos);
+				id = raf.readInt();
+				for( int i = 0; i < apellido.length; i++) {
+					aux = raf.readChar();
+					apellido[i] = aux;
 				}
-				dep = raf.readInt(); //Obtengo el departamento
-				salario = raf.readDouble(); //Obtengo el salario
+				dep = raf.readInt();
+				salario = raf.readDouble();
 				
-				String ap = new String(apellido); //Convierto a un String el array con el apellido
+				String ap = new String(apellido);
 				
 				System.out.println("ID: "+id+" APELLIDO: "+ap+" DEPARTAMENTO: "+dep+" SALARIO: "+salario);
-				pos = pos+36;//Me posiciono en el siguiente empleado
-				
-				//- Si he recorrido el todos los bytes salgo del for-//
-				if(raf.getFilePointer() == raf.length()) break;
+				pos = pos+36;
 			}
 			raf.close();
 		}catch(FileNotFoundException fnfe){

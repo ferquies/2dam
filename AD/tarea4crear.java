@@ -20,7 +20,7 @@ public class tarea4crear {
 			int n = apellido.length;//Nº elementos del array
 			for (int i = 0; i < n; i++)
 			{
-				int valor = (int) Math.floor(Math.random()*1000+1);
+				int valor = (int) Math.floor(Math.random()*25+1);
 				raf.writeInt(valor);// Empleo i+1 para identificar empleado
 				sb = new StringBuffer(apellido[i]);
 				sb.setLength(10);//10 Caracteres para el apellido
