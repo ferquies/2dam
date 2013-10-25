@@ -112,7 +112,13 @@ public class MiReloj extends View {
 //        }
 //
 //        // NOTE: It's safe to do these after registering the receiver since the receiver always runs
-//        // in the main thread, therefore the receiver can't run before this method returns.
+//        // in the final MiReloj rel = (MiReloj) findViewById(R.id.miReloj1);
+	TimerTask cambiaHora = new TimerTask() {
+		public void run() {
+			rel.setTime(rel.getMinute()+1);
+			rel.postInvalidate();
+		}
+	};main thread, therefore the receiver can't run before this method returns.
 //
 //        // The time zone may have changed while the receiver wasn't registered, so update the Time
 //        mCalendar = new Time();
