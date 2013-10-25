@@ -3,17 +3,19 @@
 #include <sys/times.h>
 
 int main(int argc, char **argv) {
-	int N = 500000;
+	int N = 100000000;
 	long *array_dinamico = (long*) malloc(N*sizeof(long));
 	double tiempo[100];
 	double media_tiempo = 0;
-	int encontrado = 0, i, x, aleatorio, media = N/2;
+	int i, x, aleatorio;
 	
 	for(i = 0; i < N; i++) {
 		array_dinamico[i] = i;
 	}
 	
 	for(x = 0; x < 100; x++) {
+		int media, min = 0, max = N - 1;
+
 		aleatorio = rand() % N;
 		
 		printf("El numero buscado es: %d\n", aleatorio);
@@ -21,16 +23,17 @@ int main(int argc, char **argv) {
 		struct tms buf;
 		clock_t t1 = times(&buf);
 	
-		while(encontrado == 0) {
-			if(aleatorio > array_dinamico[media]) {
-				media /= 2;
-			} else if(aleatorio < array_dinamico[media]) {
-				media = (N - media)/2;
-			} else if(aleatorio == array_dinamico[media]) {
-				break;
-			} else {
-				printf("No encontrado\n");
-			}
+		while(min <= max) {
+     		media = (max + min) / 2;
+    		if(array_dinamico[media] == aleatorio) {
+    			printf("El numero encontrado es: %d\n", media);
+    			break;
+    		} else if(aleatorio < array_dinamico[media]) {
+        		max = media - 1;
+		    }
+     		else {
+		    	min = media + 1;
+	 		}
 		}
 	
 		clock_t t2 = times(&buf);
@@ -43,7 +46,7 @@ int main(int argc, char **argv) {
 		media_tiempo += tiempo[x];
 	}
 	
-	media_tiempo = media/100;
+	media_tiempo = media_tiempo/100;
 	
 	printf("La media de tiempo de todas las busquedas es: %f\n", media_tiempo); 
 	

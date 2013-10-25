@@ -3,7 +3,7 @@
 #include <sys/times.h>
 
 int main(int argc, char **argv) {
-	int N = 500000;
+	int N = 100000000;
 	long *array_dinamico = (long*) malloc(N*sizeof(long));
 	double tiempo[100];
 	double media = 0;
