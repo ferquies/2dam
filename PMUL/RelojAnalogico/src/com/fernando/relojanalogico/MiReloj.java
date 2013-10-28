@@ -17,21 +17,15 @@ package com.fernando.relojanalogico;
  */
 
 import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
-import android.content.BroadcastReceiver;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.os.Handler;
-import android.text.format.DateUtils;
 import android.text.format.Time;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.RemoteViews.RemoteView;
-
-import java.util.TimeZone;
 
 /**
  * This widget display an analogic clock with two hands for hours and
@@ -113,12 +107,6 @@ public class MiReloj extends View {
 //
 //        // NOTE: It's safe to do these after registering the receiver since the receiver always runs
 //        // in the final MiReloj rel = (MiReloj) findViewById(R.id.miReloj1);
-	TimerTask cambiaHora = new TimerTask() {
-		public void run() {
-			rel.setTime(rel.getMinute()+1);
-			rel.postInvalidate();
-		}
-	};main thread, therefore the receiver can't run before this method returns.
 //
 //        // The time zone may have changed while the receiver wasn't registered, so update the Time
 //        mCalendar = new Time();
