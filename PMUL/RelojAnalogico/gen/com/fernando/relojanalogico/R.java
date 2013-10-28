@@ -12,11 +12,11 @@ public final class R {
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static final int manecilla_horas=0x7f010001;
+        public static final int horas=0x7f010001;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static final int manecilla_minutos=0x7f010002;
+        public static final int minutos=0x7f010002;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
@@ -33,10 +33,12 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int activity_vertical_margin=0x7f040001;
     }
     public static final class drawable {
-        public static final int ic_launcher=0x7f020000;
-        public static final int manecilla_horas=0x7f020001;
-        public static final int manecilla_minutos=0x7f020002;
-        public static final int reloj=0x7f020003;
+        public static final int horas=0x7f020000;
+        public static final int ic_launcher=0x7f020001;
+        public static final int manecilla_horas=0x7f020002;
+        public static final int manecilla_minutos=0x7f020003;
+        public static final int minutos=0x7f020004;
+        public static final int reloj=0x7f020005;
     }
     public static final class id {
         public static final int action_settings=0x7f080001;
@@ -88,37 +90,37 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #MiReloj_manecilla_horas com.fernando.relojanalogico:manecilla_horas}</code></td><td></td></tr>
-           <tr><td><code>{@link #MiReloj_manecilla_minutos com.fernando.relojanalogico:manecilla_minutos}</code></td><td></td></tr>
+           <tr><td><code>{@link #MiReloj_horas com.fernando.relojanalogico:horas}</code></td><td></td></tr>
+           <tr><td><code>{@link #MiReloj_minutos com.fernando.relojanalogico:minutos}</code></td><td></td></tr>
            <tr><td><code>{@link #MiReloj_reloj com.fernando.relojanalogico:reloj}</code></td><td></td></tr>
            </table>
-           @see #MiReloj_manecilla_horas
-           @see #MiReloj_manecilla_minutos
+           @see #MiReloj_horas
+           @see #MiReloj_minutos
            @see #MiReloj_reloj
          */
         public static final int[] MiReloj = {
             0x7f010000, 0x7f010001, 0x7f010002
         };
         /**
-          <p>This symbol is the offset where the {@link com.fernando.relojanalogico.R.attr#manecilla_horas}
+          <p>This symbol is the offset where the {@link com.fernando.relojanalogico.R.attr#horas}
           attribute's value can be found in the {@link #MiReloj} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.fernando.relojanalogico:manecilla_horas
+          @attr name com.fernando.relojanalogico:horas
         */
-        public static final int MiReloj_manecilla_horas = 1;
+        public static final int MiReloj_horas = 1;
         /**
-          <p>This symbol is the offset where the {@link com.fernando.relojanalogico.R.attr#manecilla_minutos}
+          <p>This symbol is the offset where the {@link com.fernando.relojanalogico.R.attr#minutos}
           attribute's value can be found in the {@link #MiReloj} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.fernando.relojanalogico:manecilla_minutos
+          @attr name com.fernando.relojanalogico:minutos
         */
-        public static final int MiReloj_manecilla_minutos = 2;
+        public static final int MiReloj_minutos = 2;
         /**
           <p>This symbol is the offset where the {@link com.fernando.relojanalogico.R.attr#reloj}
           attribute's value can be found in the {@link #MiReloj} array.

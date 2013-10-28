@@ -74,14 +74,14 @@ public class MiReloj extends View {
             mDial = r.getDrawable(R.drawable.reloj);
         }
 
-        mHourHand = a.getDrawable(R.styleable.MiReloj_manecilla_horas);
+        mHourHand = a.getDrawable(R.styleable.MiReloj_horas);
         if (mHourHand == null) {
-            mHourHand = r.getDrawable(R.drawable.manecilla_horas);
+            mHourHand = r.getDrawable(R.drawable.horas);
         }
 
-        mMinuteHand = a.getDrawable(R.styleable.MiReloj_manecilla_minutos);
+        mMinuteHand = a.getDrawable(R.styleable.MiReloj_minutos);
         if (mMinuteHand == null) {
-            mMinuteHand = r.getDrawable(R.drawable.manecilla_minutos);
+            mMinuteHand = r.getDrawable(R.drawable.minutos);
         }
 
         mCalendar = new Time();
@@ -164,8 +164,8 @@ public class MiReloj extends View {
             mChanged = false;
         }
 
-        int availableWidth = 150;
-        int availableHeight = 150;
+        int availableWidth = 400;
+        int availableHeight = 400;
 
         int x = availableWidth / 2;
         int y = availableHeight / 2;

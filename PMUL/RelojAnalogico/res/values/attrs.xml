@@ -2,7 +2,7 @@
 <resources>
     <declare-styleable name="MiReloj">
         <attr name="reloj" format="reference"/>
-        <attr name="manecilla_horas" format="reference"/>
-        <attr name="manecilla_minutos" format="reference"/>
+        <attr name="horas" format="reference"/>
+        <attr name="minutos" format="reference"/>
         </declare-styleable>
 </resources>
