@@ -13,15 +13,19 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		int cols = 5;
+		int cols = 10;
 		int rows = 5;
-		int i, x;
+		int i, x, z = 0;
 		Button botones[][] = new Button[cols][rows];
 		TableLayout layout = (TableLayout) findViewById(R.id.tableLayout);
 		for(i = 0; i < cols; i++) {
 			TableRow tr = new TableRow(this);
 			for(x = 0; x < rows; x++) {
+				z++;
 			    botones[i][x] = new Button(getApplicationContext());
+//			    botones[i][x].setMaxWidth(layout.getWidth()/cols);
+//			    botones[i][x].setMaxHeight(layout.getHeight()/rows);
+			    botones[i][x].setText(String.valueOf(z));
 			    tr.addView(botones[i][x]);
 			}
 			layout.addView(tr);

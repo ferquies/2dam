@@ -3,11 +3,11 @@
 #include <sys/times.h>
 
 int main(int argc, char **argv) {
-	int N = 100000000;
+	int N = 500000;
 	long *array_dinamico = (long*) malloc(N*sizeof(long));
 	double tiempo[100];
 	double media_tiempo = 0;
-	int i, x, aleatorio;
+	int i, x, z, aleatorio;
 	
 	for(i = 0; i < N; i++) {
 		array_dinamico[i] = i;
@@ -24,6 +24,7 @@ int main(int argc, char **argv) {
 		clock_t t1 = times(&buf);
 	
 		while(min <= max) {
+			for(z = 0; z < 500000; z++){}
      		media = (max + min) / 2;
     		if(array_dinamico[media] == aleatorio) {
     			printf("El numero encontrado es: %d\n", media);
