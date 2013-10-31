@@ -8,6 +8,36 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity" >
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true" >
+
+        <TextView
+            android:id="@+id/textMinas"
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.02"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <EditText
+            android:id="@+id/editText1"
+            android:layout_width="57dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.00"
+            android:ems="10"
+            android:inputType="number"
+            android:text="5" />
+
+        <Button
+            android:id="@+id/btnReiniciar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reiniciar partida" />
+
+    </LinearLayout>
+
     <TableLayout
         android:id="@+id/tableLayout"
         android:layout_width="wrap_content"
@@ -15,9 +45,8 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/linearLayout1"
         android:orientation="horizontal" >
-
     </TableLayout>
 
 </RelativeLayout>

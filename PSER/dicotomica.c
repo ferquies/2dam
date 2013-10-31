@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/times.h>
+#include <unistd.h>
 
 int main(int argc, char **argv) {
 	int N = 500000;
@@ -37,8 +38,10 @@ int main(int argc, char **argv) {
 	 		}
 		}
 	
+		double tvalor = sysconf(_SC_CLK_TCK);
 		clock_t t2 = times(&buf);
-		tiempo[x] = (float)t2-t1;
+		tiempo[x] = (float)(t2-t1)/tvalor;
+		
 		
 		printf("El tiempo usado para la busqueda ha sido: %f\n", tiempo[x]);
 	}
