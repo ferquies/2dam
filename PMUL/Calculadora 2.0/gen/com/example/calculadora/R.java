@@ -24,6 +24,7 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
+        public static final int ButtonCambioSigno=0x7f080010;
         public static final int action_settings=0x7f080012;
         public static final int button0=0x7f08000e;
         public static final int button1=0x7f080000;
@@ -35,13 +36,12 @@ public final class R {
         public static final int button7=0x7f080008;
         public static final int button8=0x7f08000a;
         public static final int button9=0x7f080009;
-        public static final int buttonC=0x7f080010;
-        public static final int buttonDIVISION=0x7f08000c;
-        public static final int buttonIGUAL=0x7f08000d;
-        public static final int buttonMAS=0x7f080003;
-        public static final int buttonMENOS=0x7f080007;
-        public static final int buttonPOR=0x7f08000b;
-        public static final int buttonPUNTO=0x7f080011;
+        public static final int buttonClear=0x7f080011;
+        public static final int buttonDividir=0x7f08000c;
+        public static final int buttonIgual=0x7f08000d;
+        public static final int buttonMultiplicacion=0x7f08000b;
+        public static final int buttonResta=0x7f080007;
+        public static final int buttonSuma=0x7f080003;
         public static final int editText1=0x7f08000f;
     }
     public static final class layout {

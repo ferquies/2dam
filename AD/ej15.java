@@ -18,7 +18,7 @@ public class ej15{
 			for(int x = 0; x < 7; x++) {
 				raf.seek(pos);
 				id = raf.readInt();
-				for( int i = 0; i < apellido.length; i++) {
+				for(int i = 0; i < apellido.length; i++) {
 					aux = raf.readChar();
 					apellido[i] = aux;
 				}

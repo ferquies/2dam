@@ -2,6 +2,7 @@ package com.fernando.buscaminas;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.graphics.Color;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
@@ -20,9 +21,16 @@ public class MainActivity extends Activity {
 	public void rellenarPantalla() {
 		EditText nm = (EditText) findViewById(R.id.editText1);
 		String n = String.valueOf(nm.getText());
-		int i, x, z = 0, minas = Integer.parseInt(n);
+		int i, x, z = 0, minas = 1;
+		if(Integer.parseInt(n) > rows*cols) {
+			minas = rows*cols;
+		} else if(Integer.parseInt(n) < 1 || n.equals(null)) {
+			minas = 1;
+		} else {
+			minas = Integer.parseInt(n);
+		}
 		Button btnReiniciar = (Button) findViewById(R.id.btnReiniciar);
-		btnReiniciar.setText("Reiniciar partida");
+		btnReiniciar.setBackgroundResource(R.drawable.inicio);
 		TextView textMinas = (TextView) findViewById(R.id.textMinas);
 		textMinas.setText("Minas: " + String.valueOf(minas));
 		Random rand = new Random();
@@ -181,15 +189,24 @@ public class MainActivity extends Activity {
 				}
 			}
 			if(botones[fila][col].isSelected()) {
-				botones[fila][col].setText("*");
+//				botones[fila][col].setText("*");
+				botones[fila][col].setBackgroundResource(R.drawable.bomba);
 				botones[fila][col].setEnabled(false);
 			}
 			else {
-				botones[fila][col].setText(String.valueOf(numMinas(fila, col)));
+				if(numMinas(fila, col) == 0 || numMinas(fila, col) == 1) {
+					botones[fila][col].setText(String.valueOf(numMinas(fila, col)));
+				} else if(numMinas(fila, col) == 2) {
+					botones[fila][col].setText(String.valueOf(numMinas(fila, col)));
+					botones[fila][col].setTextColor(Color.YELLOW);
+				} else {
+					botones[fila][col].setText(String.valueOf(numMinas(fila, col)));
+					botones[fila][col].setTextColor(Color.RED);
+				}
 				botones[fila][col].setEnabled(false);
 			}
 			Button btnReiniciar = (Button) findViewById(R.id.btnReiniciar);
-			btnReiniciar.setText("Has perdido...");
+			btnReiniciar.setBackgroundResource(R.drawable.reinicio);
 		}
 	}
 	
@@ -208,7 +225,16 @@ public class MainActivity extends Activity {
 			perder();
 		}
 		else {
-			botones[fila][col].setText(String.valueOf(numMinas(fila, col)));
+			int num = numMinas(fila, col);
+			if(num == 0 || num == 1) {
+				botones[fila][col].setText(String.valueOf(numMinas(fila, col)));
+			} else if(num == 2) {
+				botones[fila][col].setText(String.valueOf(numMinas(fila, col)));
+				botones[fila][col].setTextColor(Color.YELLOW);
+			} else {
+				botones[fila][col].setText(String.valueOf(numMinas(fila, col)));
+				botones[fila][col].setTextColor(Color.RED);
+			}
 			botones[fila][col].setEnabled(false);
 		}
 	}
@@ -232,7 +258,7 @@ public class MainActivity extends Activity {
 	public void ganar() {
 		perder();
 		Button btnReiniciar = (Button) findViewById(R.id.btnReiniciar);
-		btnReiniciar.setText("Has ganado!");
+		btnReiniciar.setBackgroundResource(R.drawable.ganar);
 	}
 	
 	// Listener de cada boton
@@ -250,7 +276,7 @@ public class MainActivity extends Activity {
 		public boolean onLongClick(View v) {
 			Button btn = (Button) findViewById(v.getId());
 			v.setActivated(true);
-			btn.setText("?");
+			btn.setBackgroundResource(R.drawable.bandera);
 			if(comprobar_acabar())
 				ganar();
 			

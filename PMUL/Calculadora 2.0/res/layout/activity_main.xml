@@ -39,7 +39,7 @@
         android:text="3" />
 
     <Button
-        android:id="@+id/buttonMAS"
+        android:id="@+id/buttonSuma"
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -75,11 +75,11 @@
         android:text="6" />
 
     <Button
-        android:id="@+id/buttonMENOS"
+        android:id="@+id/buttonResta"
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/buttonMAS"
+        android:layout_alignRight="@+id/buttonSuma"
         android:layout_alignTop="@+id/button6"
         android:text="-" />
 
@@ -103,11 +103,11 @@
         android:text="9" />
 
     <Button
-        android:id="@+id/buttonPOR"
+        android:id="@+id/buttonMultiplicacion"
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/buttonMENOS"
+        android:layout_alignLeft="@+id/buttonResta"
         android:layout_below="@+id/button4"
         android:text="*" />
 
@@ -121,22 +121,22 @@
         android:text="8" />
 
     <Button
-        android:id="@+id/buttonDIVISION"
+        android:id="@+id/buttonDividir"
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/buttonIGUAL"
-        android:layout_toRightOf="@+id/buttonIGUAL"
+        android:layout_alignTop="@+id/buttonIgual"
+        android:layout_toRightOf="@+id/buttonIgual"
         android:text="/" />
 
     <Button
-        android:id="@+id/buttonIGUAL"
+        android:id="@+id/buttonIgual"
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/button0"
         android:layout_alignBottom="@+id/button0"
-        android:layout_toLeftOf="@+id/buttonPOR"
+        android:layout_toLeftOf="@+id/buttonMultiplicacion"
         android:text="=" />
 
     <EditText
@@ -158,27 +158,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/button9"
-        android:layout_toLeftOf="@+id/buttonIGUAL"
+        android:layout_toLeftOf="@+id/buttonIgual"
         android:text="0" />
 
     <Button
-        android:id="@+id/buttonC"
+        android:id="@+id/ButtonCambioSigno"
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/button7"
-        android:layout_alignRight="@+id/buttonDIVISION"
-        android:layout_below="@+id/buttonDIVISION"
-        android:layout_marginTop="20dp"
-        android:text="C" />
+        android:layout_alignLeft="@+id/buttonClear"
+        android:layout_alignRight="@+id/buttonDividir"
+        android:layout_below="@+id/buttonDividir"
+        android:text="+ - " />
 
     <Button
-        android:id="@+id/buttonPUNTO"
+        android:id="@+id/buttonClear"
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button7"
-        android:layout_toLeftOf="@+id/button8"
-        android:text="." />
+        android:layout_above="@+id/ButtonCambioSigno"
+        android:layout_alignLeft="@+id/button7"
+        android:text="C" />
 
 </RelativeLayout>
