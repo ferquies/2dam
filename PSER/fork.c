@@ -5,7 +5,7 @@
 #include <sys/wait.h>
 
 int main(int argc, char **argv) {
-	int* estado;
+	int estado;
 	printf("Hola\n");
 	pid_t id = fork();
 	if(id == 0) {
@@ -13,7 +13,7 @@ int main(int argc, char **argv) {
 	} else {
 		printf("Adios padre\n");
 	}
-	wait(estado);
+	wait(&estado);
 	//waitpid(pid_t pid, int *estado, int opciones);
 	exit(0);
 	
