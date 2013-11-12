@@ -15,13 +15,14 @@ import java.util.Random;
 
 public class MainActivity extends Activity {
 	protected Button botones[][];
-	protected int rows = 9, cols = 5;
+	protected int rows = 9, cols = 5, minas, banderas;
 	
 	// Rellena la pantalla con los botones
 	public void rellenarPantalla() {
 		EditText nm = (EditText) findViewById(R.id.editText1);
 		String n = String.valueOf(nm.getText());
-		int i, x, z = 0, minas = 1;
+		int i, x, z = 0;
+		minas = 1;
 		if(Integer.parseInt(n) > rows*cols) {
 			minas = rows*cols;
 		} else if(Integer.parseInt(n) < 1 || n.equals(null)) {
@@ -29,6 +30,7 @@ public class MainActivity extends Activity {
 		} else {
 			minas = Integer.parseInt(n);
 		}
+		banderas = minas;
 		Button btnReiniciar = (Button) findViewById(R.id.btnReiniciar);
 		btnReiniciar.setBackgroundResource(R.drawable.inicio);
 		TextView textMinas = (TextView) findViewById(R.id.textMinas);
@@ -275,8 +277,15 @@ public class MainActivity extends Activity {
 	private View.OnLongClickListener mantener = new View.OnLongClickListener() {
 		public boolean onLongClick(View v) {
 			Button btn = (Button) findViewById(v.getId());
-			v.setActivated(true);
-			btn.setBackgroundResource(R.drawable.bandera);
+			if(!v.isActivated()) {
+				if(banderas > 0) {
+					v.setActivated(true);
+					btn.setBackgroundResource(R.drawable.bandera);
+					banderas--;
+				}
+			} else {
+				btn.setBackgroundColor(Color.GRAY);
+			}
 			if(comprobar_acabar())
 				ganar();
 			
