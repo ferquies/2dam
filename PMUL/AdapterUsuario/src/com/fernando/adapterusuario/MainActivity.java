@@ -2,7 +2,9 @@ package com.fernando.adapterusuario;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.View;
 import android.widget.ListView;
 
 public class MainActivity extends Activity {
@@ -19,6 +21,8 @@ public class MainActivity extends Activity {
 		ListView lista = (ListView) findViewById(R.id.listView1);
 		MyAdapter adaptador = new MyAdapter(this, R.layout.layoutmuestra, valores_contacto);
 		lista.setAdapter(adaptador);
+		View layCabecera = LayoutInflater.from(this).inflate(R.layout.cabecera, null);
+		
 	}
 
 	@Override

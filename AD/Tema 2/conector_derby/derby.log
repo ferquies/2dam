@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Mon Nov 18 10:25:54 CET 2013:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.1.1 - (1458268): instance a816c00e-0142-6a87-ce30-00000488db18 
+on database directory /home/fernando/Documentos/DAM/Segundo/2dam/AD/Tema 2/actividad2 with class loader sun.misc.Launcher$AppClassLoader@645ad7b2 
+Loaded from file:/home/fernando/Documentos/DAM/Segundo/2dam/AD/Tema%202/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.7.0_45-mockbuild_2013_10_16_17_47-b00
+user.dir=/home/fernando/Documentos/DAM/Segundo/2dam/AD/Tema 2/conector_derby
+os.name=Linux
+os.arch=amd64
+os.version=3.11.8-200.fc19.x86_64
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''

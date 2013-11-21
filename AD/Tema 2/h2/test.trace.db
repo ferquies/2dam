@@ -1,0 +1,114 @@
+11-18 10:18:38 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Tabla "TABLE" no encontrada
+Table "TABLE" not found; SQL statement:
+INSERT INTO TABLE DEPARTAMENTOS VALUES(10,"VENTAS","MADRID") [42102-173]
+11-18 10:19:04 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Columna "VENTAS" no encontrada
+Column "VENTAS" not found; SQL statement:
+INSERT INTO DEPARTAMENTOS VALUES(10, "VENTAS", "MADRID") [42122-173]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:331)
+	at org.h2.message.DbException.get(DbException.java:171)
+	at org.h2.message.DbException.get(DbException.java:148)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:144)
+	at org.h2.command.dml.Insert.prepare(Insert.java:238)
+	at org.h2.command.Parser.prepareCommand(Parser.java:219)
+	at org.h2.engine.Session.prepareLocal(Session.java:428)
+	at org.h2.engine.Session.prepareCommand(Session.java:377)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1138)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:168)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:156)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1316)
+	at org.h2.server.web.WebApp.query(WebApp.java:1005)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:954)
+	at org.h2.server.web.WebThread.process(WebThread.java:167)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Thread.java:744)
+11-18 10:20:02 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Columna "VENTAS" no encontrada
+Column "VENTAS" not found; SQL statement:
+INSERT INTO DEPARTAMENTOS VALUES(10, VENTAS, MADRID) [42122-173]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:331)
+	at org.h2.message.DbException.get(DbException.java:171)
+	at org.h2.message.DbException.get(DbException.java:148)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:144)
+	at org.h2.command.dml.Insert.prepare(Insert.java:238)
+	at org.h2.command.Parser.prepareCommand(Parser.java:219)
+	at org.h2.engine.Session.prepareLocal(Session.java:428)
+	at org.h2.engine.Session.prepareCommand(Session.java:377)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1138)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:168)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:156)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1316)
+	at org.h2.server.web.WebApp.query(WebApp.java:1005)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:954)
+	at org.h2.server.web.WebThread.process(WebThread.java:167)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Thread.java:744)
+11-18 10:20:06 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Columna "VENTAS" no encontrada
+Column "VENTAS" not found; SQL statement:
+INSERT INTO DEPARTAMENTOS VALUES(10, VENTAS, MADRID) [42122-173]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:331)
+	at org.h2.message.DbException.get(DbException.java:171)
+	at org.h2.message.DbException.get(DbException.java:148)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:144)
+	at org.h2.command.dml.Insert.prepare(Insert.java:238)
+	at org.h2.command.Parser.prepareCommand(Parser.java:219)
+	at org.h2.engine.Session.prepareLocal(Session.java:428)
+	at org.h2.engine.Session.prepareCommand(Session.java:377)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1138)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:168)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:156)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1316)
+	at org.h2.server.web.WebApp.query(WebApp.java:1005)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:954)
+	at org.h2.server.web.WebThread.process(WebThread.java:167)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Thread.java:744)
+11-18 10:20:07 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Columna "VENTAS" no encontrada
+Column "VENTAS" not found; SQL statement:
+INSERT INTO DEPARTAMENTOS VALUES(10, VENTAS, MADRID) [42122-173]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:331)
+	at org.h2.message.DbException.get(DbException.java:171)
+	at org.h2.message.DbException.get(DbException.java:148)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:144)
+	at org.h2.command.dml.Insert.prepare(Insert.java:238)
+	at org.h2.command.Parser.prepareCommand(Parser.java:219)
+	at org.h2.engine.Session.prepareLocal(Session.java:428)
+	at org.h2.engine.Session.prepareCommand(Session.java:377)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1138)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:168)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:156)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1316)
+	at org.h2.server.web.WebApp.query(WebApp.java:1005)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:954)
+	at org.h2.server.web.WebThread.process(WebThread.java:167)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Thread.java:744)
+11-18 10:20:46 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Columna "VENTAS" no encontrada
+Column "VENTAS" not found; SQL statement:
+INSERT INTO DEPARTAMENTOS VALUES(10, "VENTAS", "MADRID") [42122-173]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:331)
+	at org.h2.message.DbException.get(DbException.java:171)
+	at org.h2.message.DbException.get(DbException.java:148)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:144)
+	at org.h2.command.dml.Insert.prepare(Insert.java:238)
+	at org.h2.command.Parser.prepareCommand(Parser.java:219)
+	at org.h2.engine.Session.prepareLocal(Session.java:428)
+	at org.h2.engine.Session.prepareCommand(Session.java:377)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1138)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:168)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:156)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1316)
+	at org.h2.server.web.WebApp.query(WebApp.java:1005)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:954)
+	at org.h2.server.web.WebThread.process(WebThread.java:167)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Thread.java:744)

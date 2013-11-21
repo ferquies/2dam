@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    <CheckBoxPreference android:summary="Prueba de cosas del checkbox" android:key="checkalo" android:title="Checkbox a tope"/>
+    <EditTextPreference android:title="Edit Text" android:key="nananana" android:dialogTitle="Titulo dialogo" android:summary="Na na na na na na na na na na na na y la otra pierna nanananana"/>
+    <ListPreference android:entries="@array/ColorAplicacion" android:entryValues="@array/ColoresAppValues" android:title="Colores" android:summary="Colores aplicacion" android:key="color_app"/>
+    
+
+</PreferenceScreen>

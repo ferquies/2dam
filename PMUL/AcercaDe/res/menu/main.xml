@@ -1,0 +1,9 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item
+        android:id="@+id/acerca_de"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="Acerca de">
+    </item>
+    <item android:id="@+id/preferencias" android:title="Preferencias"></item>
+</menu>

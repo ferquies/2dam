@@ -1,0 +1,8 @@
+11-18 10:10:18 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Tabla "DEPARTAMENTOS" no encontrada
+Table "DEPARTAMENTOS" not found; SQL statement:
+SELECT * FROM departamentos; [42102-162]
+11-18 10:23:19 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Tabla "DEPARTAMENTOS" no encontrada
+Table "DEPARTAMENTOS" not found; SQL statement:
+SELECT * FROM departamentos; [42102-162]

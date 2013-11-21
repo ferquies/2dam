@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="ColorAplicacion">
+        <item>Color Rojo</item>
+        <item>Color Azul</item>
+    </string-array>
+    <string-array name="ColoresAppValues">
+        <item>red</item>
+        <item>blue</item>
+    </string-array>
+</resources>
