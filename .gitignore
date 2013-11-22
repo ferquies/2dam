@@ -9,4 +9,5 @@
 *.out
 *.exe*
 *.zip
-.metadata
+*.metadata
+.directory

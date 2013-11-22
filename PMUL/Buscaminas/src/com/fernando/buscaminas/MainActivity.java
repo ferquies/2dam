@@ -56,7 +56,7 @@ public class MainActivity extends Activity {
 			int f, c;
 			f = rand.nextInt(rows);
 			c = rand.nextInt(cols);
-			if(compruebaMina(f, c) == true) {
+			if(compruebaMina(f, c)) {
 				botones[f][c].setSelected(true);
 				minas--;
 			}
