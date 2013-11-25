@@ -214,184 +214,186 @@ public class MainActivity extends Activity {
 		}
 	}
 	
+	// Al pulsar sobre un botón que no este tocando ninguna mina se llama a esta funcion, que muestra todos los botones
+	// adyacentes que no esten tocando ninguna mina
 	public void propagar(int f, int c) {
 		if(f > 0 && f < rows-1 && c > 0 && c < cols-1) {
-			if(numMinas(f-1, c) == 0 && botones[f-1][c].isEnabled()) {
+			if(!botones[f-1][c].isSelected() && botones[f-1][c].isEnabled()) {
 				botones[f-1][c].setEnabled(false);
 				botones[f-1][c].setActivated(true);
-				propagar(f-1, c);
-			} if(numMinas(f-1, c-1) == 0 && botones[f-1][c-1].isEnabled()) {
+				comprobar(f-1, c);
+			} if(!botones[f-1][c-1].isSelected() && botones[f-1][c-1].isEnabled()) {
 				botones[f-1][c-1].setEnabled(false);
 				botones[f-1][c-1].setActivated(true);
-				propagar(f-1, c-1);
-			} if(numMinas(f-1, c+1) == 0 && botones[f-1][c+1].isEnabled()) {
+				comprobar(f-1, c-1);
+			} if(!botones[f-1][c+1].isSelected() && botones[f-1][c+1].isEnabled()) {
 				botones[f-1][c+1].setEnabled(false);
 				botones[f-1][c+1].setActivated(true);
-				propagar(f-1, c+1);
-			} if(numMinas(f+1, c) == 0 && botones[f+1][c].isEnabled()) {
+				comprobar(f-1, c+1);
+			} if(!botones[f+1][c].isSelected() && botones[f+1][c].isEnabled()) {
 				botones[f+1][c].setEnabled(false);
 				botones[f+1][c].setActivated(true);
-				propagar(f+1, c);
-			} if(numMinas(f+1, c-1) == 0 && botones[f+1][c-1].isEnabled()) {
+				comprobar(f+1, c);
+			} if(!botones[f+1][c-1].isSelected() && botones[f+1][c-1].isEnabled()) {
 				botones[f+1][c-1].setEnabled(false);
 				botones[f+1][c-1].setActivated(true);
-				propagar(f+1, c-1);
-			} if(numMinas(f+1, c+1) == 0 && botones[f+1][c+1].isEnabled()) {
+				comprobar(f+1, c-1);
+			} if(!botones[f+1][c+1].isSelected() && botones[f+1][c+1].isEnabled()) {
 				botones[f+1][c+1].setEnabled(false);
 				botones[f+1][c+1].setActivated(true);
-				propagar(f+1, c+1);
-			} if(numMinas(f, c-1) == 0 && botones[f][c-1].isEnabled()) {
+				comprobar(f+1, c+1);
+			} if(!botones[f][c-1].isSelected() && botones[f][c-1].isEnabled()) {
 				botones[f][c-1].setEnabled(false);
 				botones[f][c-1].setActivated(true);
-				propagar(f, c-1);
-			} if(numMinas(f, c+1) == 0 && botones[f][c+1].isEnabled()) {
+				comprobar(f, c-1);
+			} if(!botones[f][c+1].isSelected() && botones[f][c+1].isEnabled()) {
 				botones[f][c+1].setEnabled(false);
 				botones[f][c+1].setActivated(true);
-				propagar(f, c+1);
+				comprobar(f, c+1);
 			}
 		} else if(f == 0 && c == 0) {
-			if(numMinas(f, c+1) == 0 && botones[f][c+1].isEnabled()) {
+			if(!botones[f][c+1].isSelected() && botones[f][c+1].isEnabled()) {
 				botones[f][c+1].setEnabled(false);
 				botones[f][c+1].setActivated(true);
-				propagar(f, c+1);
-			} if(numMinas(f+1, c+1) == 0 && botones[f+1][c+1].isEnabled()) {
+				comprobar(f, c+1);
+			} if(!botones[f+1][c+1].isSelected() && botones[f+1][c+1].isEnabled()) {
 				botones[f+1][c+1].setEnabled(false);
 				botones[f+1][c+1].setActivated(true);
-				propagar(f+1, c+1);
-			} if(numMinas(f+1, c) == 0 && botones[f+1][c].isEnabled()) {
+				comprobar(f+1, c+1);
+			} if(!botones[f+1][c].isSelected() && botones[f+1][c].isEnabled()) {
 				botones[f+1][c].setEnabled(false);
 				botones[f+1][c].setActivated(true);
-				propagar(f+1, c);
+				comprobar(f+1, c);
 			}
 		} else if(f == rows-1 && c == 0) {
-			if(numMinas(f-1, c) == 0 && botones[f-1][c].isEnabled()) {
+			if(!botones[f-1][c].isSelected() && botones[f-1][c].isEnabled()) {
 				botones[f-1][c].setEnabled(false);
 				botones[f-1][c].setActivated(true);
-				propagar(f-1, c);
-			} if(numMinas(f-1, c+1) == 0 && botones[f-1][c+1].isEnabled()) {
+				comprobar(f-1, c);
+			} if(!botones[f-1][c+1].isSelected() && botones[f-1][c+1].isEnabled()) {
 				botones[f-1][c+1].setEnabled(false);
 				botones[f-1][c+1].setActivated(true);
-				propagar(f-1, c+1);
-			} if(numMinas(f, c+1) == 0 && botones[f][c+1].isEnabled()) {
+				comprobar(f-1, c+1);
+			} if(!botones[f][c+1].isSelected() && botones[f][c+1].isEnabled()) {
 				botones[f][c+1].setEnabled(false);
 				botones[f][c+1].setActivated(true);
-				propagar(f, c+1);
+				comprobar(f, c+1);
 			}
 		} else if(f == 0 && c == cols-1) {
-			if(numMinas(f+1, c) == 0 && botones[f+1][c].isEnabled()) {
+			if(!botones[f+1][c].isSelected() && botones[f+1][c].isEnabled()) {
 				botones[f+1][c].setEnabled(false);
 				botones[f+1][c].setActivated(true);
-				propagar(f+1, c);
-			} if(numMinas(f+1, c-1) == 0 && botones[f+1][c-1].isEnabled()) {
+				comprobar(f+1, c);
+			} if(!botones[f+1][c-1].isSelected() && botones[f+1][c-1].isEnabled()) {
 				botones[f+1][c-1].setEnabled(false);
 				botones[f+1][c-1].setActivated(true);
-				propagar(f+1, c-1);
-			} if(numMinas(f, c-1) == 0 && botones[f][c-1].isEnabled()) {
+				comprobar(f+1, c-1);
+			} if(!botones[f][c-1].isSelected() && botones[f][c-1].isEnabled()) {
 				botones[f][c-1].setEnabled(false);
 				botones[f][c-1].setActivated(true);
-				propagar(f, c-1);
+				comprobar(f, c-1);
 			}
 		} else if(f == rows-1 && c == cols-1) {
-			if(numMinas(f-1, c) == 0 && botones[f-1][c].isEnabled()) {
+			if(!botones[f-1][c].isSelected() && botones[f-1][c].isEnabled()) {
 				botones[f-1][c].setEnabled(false);
 				botones[f-1][c].setActivated(true);
-				propagar(f-1, c);
-			} if(numMinas(f-1, c-1) == 0 && botones[f-1][c-1].isEnabled()) {
+				comprobar(f-1, c);
+			} if(!botones[f-1][c-1].isSelected() && botones[f-1][c-1].isEnabled()) {
 				botones[f-1][c-1].setEnabled(false);
 				botones[f-1][c-1].setActivated(true);
-				propagar(f-1, c-1);
-			} if(numMinas(f, c-1) == 0 && botones[f][c-1].isEnabled()) {
+				comprobar(f-1, c-1);
+			} if(!botones[f][c-1].isSelected() && botones[f][c-1].isEnabled()) {
 				botones[f][c-1].setEnabled(false);
 				botones[f][c-1].setActivated(true);
-				propagar(f, c-1);
+				comprobar(f, c-1);
 			}
 		} else if(c == 0) {
-			if(numMinas(f-1, c) == 0 && botones[f-1][c].isEnabled()) {
+			if(!botones[f-1][c].isSelected() && botones[f-1][c].isEnabled()) {
 				botones[f-1][c].setEnabled(false);
 				botones[f-1][c].setActivated(true);
-				propagar(f-1, c);
-			} if(numMinas(f+1, c) == 0 && botones[f+1][c].isEnabled()) {
+				comprobar(f-1, c);
+			} if(!botones[f+1][c].isSelected() && botones[f+1][c].isEnabled()) {
 				botones[f+1][c].setEnabled(false);
 				botones[f+1][c].setActivated(true);
-				propagar(f+1, c);
-			} if(numMinas(f-1, c+1) == 0 && botones[f-1][c+1].isEnabled()) {
+				comprobar(f+1, c);
+			} if(!botones[f-1][c+1].isSelected() && botones[f-1][c+1].isEnabled()) {
 				botones[f-1][c+1].setEnabled(false);
 				botones[f-1][c+1].setActivated(true);
-				propagar(f-1, c+1);
-			} if(numMinas(f+1, c+1) == 0 && botones[f+1][c+1].isEnabled()) {
+				comprobar(f-1, c+1);
+			} if(!botones[f+1][c+1].isSelected() && botones[f+1][c+1].isEnabled()) {
 				botones[f+1][c+1].setEnabled(false);
 				botones[f+1][c+1].setActivated(true);
-				propagar(f+1, c+1);
-			} if(numMinas(f, c+1) == 0 && botones[f][c+1].isEnabled()) {
+				comprobar(f+1, c+1);
+			} if(!botones[f][c+1].isSelected() && botones[f][c+1].isEnabled()) {
 				botones[f][c+1].setEnabled(false);
 				botones[f][c+1].setActivated(true);
-				propagar(f, c+1);
+				comprobar(f, c+1);
 			}
 		} else if(c == cols-1) {
-			if(numMinas(f-1, c) == 0 && botones[f-1][c].isEnabled()) {
+			if(!botones[f-1][c].isSelected() && botones[f-1][c].isEnabled()) {
 				botones[f-1][c].setEnabled(false);
 				botones[f-1][c].setActivated(true);
-				propagar(f-1, c);
-			} if(numMinas(f+1, c) == 0 && botones[f+1][c].isEnabled()) {
+				comprobar(f-1, c);
+			} if(!botones[f+1][c].isSelected() && botones[f+1][c].isEnabled()) {
 				botones[f+1][c].setEnabled(false);
 				botones[f+1][c].setActivated(true);
-				propagar(f+1, c);
-			} if(numMinas(f-1, c-1) == 0 && botones[f-1][c-1].isEnabled()) {
+				comprobar(f+1, c);
+			} if(!botones[f-1][c-1].isSelected() && botones[f-1][c-1].isEnabled()) {
 				botones[f-1][c-1].setEnabled(false);
 				botones[f-1][c-1].setActivated(true);
-				propagar(f-1, c-1);
-			} if(numMinas(f+1, c-1) == 0 && botones[f+1][c-1].isEnabled()) {
+				comprobar(f-1, c-1);
+			} if(!botones[f+1][c-1].isSelected() && botones[f+1][c-1].isEnabled()) {
 				botones[f+1][c-1].setEnabled(false);
 				botones[f+1][c-1].setActivated(true);
-				propagar(f+1, c-1);
-			} if(numMinas(f, c-1) == 0 && botones[f][c-1].isEnabled()) {
+				comprobar(f+1, c-1);
+			} if(!botones[f][c-1].isSelected() && botones[f][c-1].isEnabled()) {
 				botones[f][c-1].setEnabled(false);
 				botones[f][c-1].setActivated(true);
-				propagar(f, c-1);
+				comprobar(f, c-1);
 			}
 		} else if(f == 0) {
-			if(numMinas(f, c+1) == 0 && botones[f][c+1].isEnabled()) {
+			if(!botones[f][c+1].isSelected() && botones[f][c+1].isEnabled()) {
 				botones[f][c+1].setEnabled(false);
 				botones[f][c+1].setActivated(true);
-				propagar(f, c+1);
-			} if(numMinas(f, c-1) == 0 && botones[f][c-1].isEnabled()) {
+				comprobar(f, c+1);
+			} if(!botones[f][c-1].isSelected() && botones[f][c-1].isEnabled()) {
 				botones[f][c-1].setEnabled(false);
 				botones[f][c-1].setActivated(true);
-				propagar(f, c-1);
-			} if(numMinas(f+1, c-1) == 0 && botones[f+1][c-1].isEnabled()) {
+				comprobar(f, c-1);
+			} if(!botones[f+1][c-1].isSelected() && botones[f+1][c-1].isEnabled()) {
 				botones[f+1][c-1].setEnabled(false);
 				botones[f+1][c-1].setActivated(true);
-				propagar(f+1, c-1);
-			} if(numMinas(f+1, c+1) == 0 && botones[f+1][c+1].isEnabled()) {
+				comprobar(f+1, c-1);
+			} if(!botones[f+1][c+1].isSelected() && botones[f+1][c+1].isEnabled()) {
 				botones[f+1][c+1].setEnabled(false);
 				botones[f+1][c+1].setActivated(true);
-				propagar(f+1, c+1);
-			} if(numMinas(f+1, c) == 0 && botones[f+1][c].isEnabled()) {
+				comprobar(f+1, c+1);
+			} if(!botones[f+1][c].isSelected() && botones[f+1][c].isEnabled()) {
 				botones[f+1][c].setEnabled(false);
 				botones[f+1][c].setActivated(true);
-				propagar(f+1, c);
+				comprobar(f+1, c);
 			}
 		} else if(f == rows-1) {
-			if(numMinas(f, c+1) == 0 && botones[f][c+1].isEnabled()) {
+			if(!botones[f][c+1].isSelected() && botones[f][c+1].isEnabled()) {
 				botones[f][c+1].setEnabled(false);
 				botones[f][c+1].setActivated(true);
-				propagar(f, c+1);
-			} if(numMinas(f, c-1) == 0 && botones[f][c-1].isEnabled()) {
+				comprobar(f, c+1);
+			} if(!botones[f][c-1].isSelected() && botones[f][c-1].isEnabled()) {
 				botones[f][c-1].setEnabled(false);
 				botones[f][c-1].setActivated(true);
-				propagar(f, c-1);
-			} if(numMinas(f-1, c-1) == 0 && botones[f-1][c-1].isEnabled()) {
+				comprobar(f, c-1);
+			} if(!botones[f-1][c-1].isSelected() && botones[f-1][c-1].isEnabled()) {
 				botones[f-1][c-1].setEnabled(false);
 				botones[f-1][c-1].setActivated(true);
-				propagar(f-1, c-1);
-			} if(numMinas(f-1, c+1) == 0 && botones[f-1][c+1].isEnabled()) {
+				comprobar(f-1, c-1);
+			} if(!botones[f-1][c+1].isSelected() && botones[f-1][c+1].isEnabled()) {
 				botones[f-1][c+1].setEnabled(false);
 				botones[f-1][c+1].setActivated(true);
-				propagar(f-1, c+1);
-			} if(numMinas(f-1, c) == 0 && botones[f-1][c].isEnabled()) {
+				comprobar(f-1, c+1);
+			} if(!botones[f-1][c].isSelected() && botones[f-1][c].isEnabled()) {
 				botones[f-1][c].setEnabled(false);
 				botones[f-1][c].setActivated(true);
-				propagar(f-1, c);
+				comprobar(f-1, c);
 			}
 		}
 	}
@@ -407,6 +409,32 @@ public class MainActivity extends Activity {
 				}
 			}
 		}
+		if(botones[fila][col].isSelected()) {
+			perder();
+		}
+		else {
+			int num = numMinas(fila, col);
+			if(num == 0) {
+				propagar(fila, col);
+			}
+			else if(num == 1) {
+				botones[fila][col].setText(String.valueOf(numMinas(fila, col)));
+			} else if(num == 2) {
+				botones[fila][col].setText(String.valueOf(numMinas(fila, col)));
+				botones[fila][col].setTextColor(Color.YELLOW);
+			} else {
+				botones[fila][col].setText(String.valueOf(numMinas(fila, col)));
+				botones[fila][col].setTextColor(Color.RED);
+			}
+			botones[fila][col].setEnabled(false);
+		}
+	}
+	
+	// Comprueba si tiene mina o no y le asigna un valor	
+	public void comprobar(int f, int c) {
+		int col = c;
+		int fila = f;
+		
 		if(botones[fila][col].isSelected()) {
 			perder();
 		}
@@ -463,31 +491,16 @@ public class MainActivity extends Activity {
 	// Listener de pulsacion larga para cada boton
 	private View.OnLongClickListener mantener = new View.OnLongClickListener() {
 		public boolean onLongClick(View v) {
-			Button btn = (Button) findViewById(v.getId());
-			if(v.isSelected()) {
-				if(v.isActivated()) {
-					if(banderas > 0) {
-						v.setActivated(false);
-						btn.setBackgroundResource(R.drawable.bandera);
-						banderas--;
-					}
-				} else {
-					btn.setBackgroundColor(Color.GRAY);
-					v.setActivated(true);
-					banderas++;
+			if(v.getTag() != "bandera") {
+				if(banderas > 0) {
+					v.setTag("bandera");
+					v.setBackgroundResource(R.drawable.bandera);
+					banderas--;
 				}
 			} else {
-				if(!v.isActivated()) {
-					if(banderas > 0) {
-						v.setActivated(true);
-						btn.setBackgroundResource(R.drawable.bandera);
-						banderas--;
-					}
-				} else {
-					btn.setBackgroundColor(Color.GRAY);
-					v.setActivated(false);
-					banderas++;
-				}
+				v.setBackgroundColor(Color.GRAY);
+				v.setTag("no");
+				banderas++;
 			}
 			if(comprobar_acabar())
 				ganar();
