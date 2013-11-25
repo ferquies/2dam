@@ -30,7 +30,7 @@ public class MainActivity extends Activity {
 		int i, x, z = 0;
 		minas = 1;
 		if(Integer.parseInt(n) > rows*cols) {
-			minas = rows*cols;
+			minas = rows*cols-1;
 		} else if(Integer.parseInt(n) < 1 || n.equals(null)) {
 			minas = 1;
 		} else {
