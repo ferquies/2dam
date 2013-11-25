@@ -18,12 +18,6 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 		View v = (View) findViewById(R.layout.activity_main);
 		SharedPreferences misprefs = PreferenceManager.getDefaultSharedPreferences(this);
-		String color = misprefs.getString(arg0, arg1);
-		if(color == "red") {
-			System.out.println("Rojo");
-		} else if(color == "blue") {
-			System.out.println("Azul");
-		}
 	}
 	
 	public boolean onOptionsItemSelected(MenuItem item) {

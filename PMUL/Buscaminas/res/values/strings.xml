@@ -4,5 +4,9 @@
     <string name="app_name">Buscaminas</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    <string name="Preferencias">Preferencias</string>
+    <string name="num_minas">Número de minas</string>
+    <string name="rows">Número de filas</string>
+    <string name="cols">Número de columnas</string>
 
 </resources>

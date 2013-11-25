@@ -2,25 +2,31 @@ package com.fernando.buscaminas;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
-
 import java.util.Random;
+import com.fernando.buscaminas.R;
+import com.fernando.buscaminas.SettingsActivity;
 
 public class MainActivity extends Activity {
 	protected Button botones[][];
-	protected int rows = 9, cols = 5, minas, banderas;
+	protected int rows = 0, cols = 0, minas, banderas;
 	
 	// Rellena la pantalla con los botones
 	public void rellenarPantalla() {
-		EditText nm = (EditText) findViewById(R.id.editText1);
-		String n = String.valueOf(nm.getText());
+		SharedPreferences prefe = getSharedPreferences("com.fernando.buscaminas_preferences", Context.MODE_PRIVATE);
+		rows = Integer.parseInt(prefe.getString("rows", ""));
+		cols = Integer.parseInt(prefe.getString("cols", ""));
+		String n = prefe.getString("num_minas", "");
 		int i, x, z = 0;
 		minas = 1;
 		if(Integer.parseInt(n) > rows*cols) {
@@ -35,6 +41,10 @@ public class MainActivity extends Activity {
 		btnReiniciar.setBackgroundResource(R.drawable.inicio);
 		TextView textMinas = (TextView) findViewById(R.id.textMinas);
 		textMinas.setText("Minas: " + String.valueOf(minas));
+		TextView textTiempo = (TextView) findViewById(R.id.textTiempo);
+		textTiempo.setText("00:00");
+		Button btnBanderas = (Button) findViewById(R.id.ButtonBanderas);
+		btnBanderas.setText(String.valueOf(banderas));
 		Random rand = new Random();
 		botones = new Button[rows][cols];
 		TableLayout layout = (TableLayout) findViewById(R.id.tableLayout);
@@ -42,8 +52,6 @@ public class MainActivity extends Activity {
 			TableRow tr = new TableRow(this);
 			for(x = 0; x < cols; x++) {
 			    botones[i][x] = new Button(getApplicationContext());
-//			    botones[i][x].setMaxWidth(layout.getWidth()/cols);
-//			    botones[i][x].setMaxHeight(layout.getHeight()/rows);
 			    botones[i][x].setId(z);
 			    botones[i][x].setOnClickListener(gestor);
 			    botones[i][x].setOnLongClickListener(mantener);
@@ -192,7 +200,6 @@ public class MainActivity extends Activity {
 				}
 			}
 			if(botones[fila][col].isSelected()) {
-//				botones[fila][col].setText("*");
 				botones[fila][col].setBackgroundResource(R.drawable.bomba);
 				botones[fila][col].setEnabled(false);
 			}
@@ -491,16 +498,19 @@ public class MainActivity extends Activity {
 	// Listener de pulsacion larga para cada boton
 	private View.OnLongClickListener mantener = new View.OnLongClickListener() {
 		public boolean onLongClick(View v) {
+			Button btnBanderas = (Button) findViewById(R.id.ButtonBanderas);
 			if(v.getTag() != "bandera") {
 				if(banderas > 0) {
 					v.setTag("bandera");
 					v.setBackgroundResource(R.drawable.bandera);
 					banderas--;
+					btnBanderas.setText(String.valueOf(banderas));
 				}
 			} else {
 				v.setBackgroundColor(Color.GRAY);
 				v.setTag("no");
 				banderas++;
+				btnBanderas.setText(String.valueOf(banderas));
 			}
 			if(comprobar_acabar())
 				ganar();
@@ -525,12 +535,27 @@ public class MainActivity extends Activity {
 		Button btnReiniciar = (Button) findViewById(R.id.btnReiniciar);
 		rellenarPantalla();
 		btnReiniciar.setOnClickListener(gestor_reinicio);
+		Button btnBanderas = (Button) findViewById(R.id.ButtonBanderas);
+		btnBanderas.setEnabled(false);
+		btnBanderas.setBackgroundResource(R.drawable.bandera);
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
+	}
+	
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch(item.getItemId()) {
+		case R.id.preferencias:
+			Intent intent2 = new Intent(this, SettingsActivity.class);
+			startActivity(intent2);
+			break;
+		default:
+			return false;
+		}
 		return true;
 	}
 }
