@@ -1,0 +1,8 @@
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Negrita_Cursiva\Negrita_Cursiva\bin\Debug\Negrita_Cursiva.exe.config
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Negrita_Cursiva\Negrita_Cursiva\bin\Debug\Negrita_Cursiva.exe
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Negrita_Cursiva\Negrita_Cursiva\bin\Debug\Negrita_Cursiva.pdb
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Negrita_Cursiva\Negrita_Cursiva\obj\Debug\Negrita_Cursiva.Form1.resources
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Negrita_Cursiva\Negrita_Cursiva\obj\Debug\Negrita_Cursiva.Properties.Resources.resources
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Negrita_Cursiva\Negrita_Cursiva\obj\Debug\Negrita_Cursiva.csproj.GenerateResource.Cache
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Negrita_Cursiva\Negrita_Cursiva\obj\Debug\Negrita_Cursiva.exe
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Negrita_Cursiva\Negrita_Cursiva\obj\Debug\Negrita_Cursiva.pdb
