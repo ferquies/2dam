@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Minesweeper</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="Preferencias">Settings</string>
+    <string name="num_minas">Number of mines</string>
+    <string name="rows">Number of rows</string>
+    <string name="cols">Number of columns</string>
+
+</resources>

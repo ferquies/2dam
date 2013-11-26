@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,6 +21,7 @@ import com.fernando.buscaminas.SettingsActivity;
 public class MainActivity extends Activity {
 	protected Button botones[][];
 	protected int rows = 0, cols = 0, minas, banderas;
+	protected Drawable fondo;
 	
 	// Rellena la pantalla con los botones
 	public void rellenarPantalla() {
@@ -433,6 +435,12 @@ public class MainActivity extends Activity {
 				botones[fila][col].setText(String.valueOf(numMinas(fila, col)));
 				botones[fila][col].setTextColor(Color.RED);
 			}
+			if(botones[fila][col].getTag() == "bandera") {
+				botones[fila][col].setBackground(fondo);
+				banderas++;
+				Button btnBanderas = (Button) findViewById(R.id.ButtonBanderas);
+				btnBanderas.setText(String.valueOf(banderas));
+			}
 			botones[fila][col].setEnabled(false);
 		}
 	}
@@ -458,6 +466,12 @@ public class MainActivity extends Activity {
 			} else {
 				botones[fila][col].setText(String.valueOf(numMinas(fila, col)));
 				botones[fila][col].setTextColor(Color.RED);
+			}
+			if(botones[fila][col].getTag() == "bandera") {
+				botones[fila][col].setBackground(fondo);
+				banderas++;
+				Button btnBanderas = (Button) findViewById(R.id.ButtonBanderas);
+				btnBanderas.setText(String.valueOf(banderas));
 			}
 			botones[fila][col].setEnabled(false);
 		}
@@ -502,12 +516,14 @@ public class MainActivity extends Activity {
 			if(v.getTag() != "bandera") {
 				if(banderas > 0) {
 					v.setTag("bandera");
+					fondo = v.getBackground();
 					v.setBackgroundResource(R.drawable.bandera);
+					
 					banderas--;
 					btnBanderas.setText(String.valueOf(banderas));
 				}
 			} else {
-				v.setBackgroundColor(Color.GRAY);
+				v.setBackground(fondo);
 				v.setTag("no");
 				banderas++;
 				btnBanderas.setText(String.valueOf(banderas));

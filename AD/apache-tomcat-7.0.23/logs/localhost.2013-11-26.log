@@ -82,3 +82,7 @@ java.lang.NoSuchMethodError: ejemplo.Departamentos.getDeptno()B
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
 	at java.lang.Thread.run(Thread.java:744)
 
+nov 26, 2013 12:01:07 PM org.apache.catalina.core.ApplicationContext log
+Información: SessionListener: contextDestroyed()
+nov 26, 2013 12:01:07 PM org.apache.catalina.core.ApplicationContext log
+Información: ContextListener: contextDestroyed()
