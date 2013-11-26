@@ -26,9 +26,9 @@ public class MainActivity extends Activity {
 	// Rellena la pantalla con los botones
 	public void rellenarPantalla() {
 		SharedPreferences prefe = getSharedPreferences("com.fernando.buscaminas_preferences", Context.MODE_PRIVATE);
-		rows = Integer.parseInt(prefe.getString("rows", ""));
-		cols = Integer.parseInt(prefe.getString("cols", ""));
-		String n = prefe.getString("num_minas", "");
+		rows = Integer.parseInt(prefe.getString("rows", "9"));
+		cols = Integer.parseInt(prefe.getString("cols", "5"));
+		String n = prefe.getString("num_minas", "5");
 		int i, x, z = 0;
 		minas = 1;
 		if(Integer.parseInt(n) > rows*cols) {
