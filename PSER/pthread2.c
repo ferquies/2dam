@@ -4,7 +4,7 @@
 
 int N = 100000;
 int array[100000];
-int busqueda = 59897;
+int busqueda = 99999;
 int flag = 0;
 pthread_mutex_t mutex;
 
@@ -42,7 +42,7 @@ int main(int argc, char **argv) {
     pthread_t id;
     pthread_create(&id, NULL, fcn_hijo, &exit_status);
     
-    for(i = 0; i < N/2; i++) {
+    for(i = 0; i < N/2 - 1; i++) {
 	if(flag == 0) {
 	    if(array[i] == busqueda) {
 		encontrado = array[i];
@@ -53,7 +53,7 @@ int main(int argc, char **argv) {
 	} else {
 	    break;
 	}
-	if(i == N/2)
+	if(i == (N/2) - 1)
 	    printf("Fin del bucle padre\n");
     }
 
@@ -65,7 +65,7 @@ int main(int argc, char **argv) {
     } else if(encontrado == busqueda) {
 	printf("Encontrado por el padre: %d\n", encontrado);
     } else {
-	printf("No encontrado.\n");
+	printf("No encontrado\n");
     }
     
     free(exit_status);
