@@ -1,0 +1,9 @@
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Messagebox\Messagebox\bin\Debug\Messagebox.exe.config
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Messagebox\Messagebox\bin\Debug\Messagebox.exe
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Messagebox\Messagebox\bin\Debug\Messagebox.pdb
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Messagebox\Messagebox\obj\Debug\Messagebox.csprojResolveAssemblyReference.cache
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Messagebox\Messagebox\obj\Debug\Messagebox.Form1.resources
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Messagebox\Messagebox\obj\Debug\Messagebox.Properties.Resources.resources
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Messagebox\Messagebox\obj\Debug\Messagebox.csproj.GenerateResource.Cache
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Messagebox\Messagebox\obj\Debug\Messagebox.exe
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Messagebox\Messagebox\obj\Debug\Messagebox.pdb
