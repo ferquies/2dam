@@ -502,10 +502,12 @@ public class MainActivity extends Activity {
 	// Listener de cada boton
 	private View.OnClickListener gestor = new View.OnClickListener() {
 		public void onClick(View v) {
-			comprobar(v.getId());
-			v.setActivated(true);
-			if(comprobar_acabar())
-				ganar();
+			if(v.getTag() != "bandera") {
+				comprobar(v.getId());
+				v.setActivated(true);
+				if(comprobar_acabar())
+					ganar();
+			}
 		}
 	};
 	
