@@ -211,7 +211,7 @@ public class MainActivity extends Activity {
 					botones[fila][col].setText(String.valueOf(numMinas(fila, col)));
 				} else if(numMinas(fila, col) == 2) {
 					botones[fila][col].setText(String.valueOf(numMinas(fila, col)));
-					botones[fila][col].setTextColor(Color.YELLOW);
+					botones[fila][col].setTextColor(Color.rgb(255, 135, 23));
 				} else {
 					botones[fila][col].setText(String.valueOf(numMinas(fila, col)));
 					botones[fila][col].setTextColor(Color.RED);
@@ -430,7 +430,7 @@ public class MainActivity extends Activity {
 				botones[fila][col].setText(String.valueOf(numMinas(fila, col)));
 			} else if(num == 2) {
 				botones[fila][col].setText(String.valueOf(numMinas(fila, col)));
-				botones[fila][col].setTextColor(Color.YELLOW);
+				botones[fila][col].setTextColor(Color.rgb(255, 135, 23));
 			} else {
 				botones[fila][col].setText(String.valueOf(numMinas(fila, col)));
 				botones[fila][col].setTextColor(Color.RED);
@@ -462,7 +462,7 @@ public class MainActivity extends Activity {
 				botones[fila][col].setText(String.valueOf(numMinas(fila, col)));
 			} else if(num == 2) {
 				botones[fila][col].setText(String.valueOf(numMinas(fila, col)));
-				botones[fila][col].setTextColor(Color.YELLOW);
+				botones[fila][col].setTextColor(Color.rgb(255, 135, 23));
 			} else {
 				botones[fila][col].setText(String.valueOf(numMinas(fila, col)));
 				botones[fila][col].setTextColor(Color.RED);
