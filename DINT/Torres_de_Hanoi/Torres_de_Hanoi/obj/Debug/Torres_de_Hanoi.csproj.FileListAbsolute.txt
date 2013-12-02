@@ -1,0 +1,9 @@
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Torres_de_Hanoi\Torres_de_Hanoi\bin\Debug\Torres_de_Hanoi.exe.config
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Torres_de_Hanoi\Torres_de_Hanoi\bin\Debug\Torres_de_Hanoi.exe
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Torres_de_Hanoi\Torres_de_Hanoi\bin\Debug\Torres_de_Hanoi.pdb
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Torres_de_Hanoi\Torres_de_Hanoi\obj\Debug\Torres_de_Hanoi.csprojResolveAssemblyReference.cache
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Torres_de_Hanoi\Torres_de_Hanoi\obj\Debug\Torres_de_Hanoi.Form1.resources
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Torres_de_Hanoi\Torres_de_Hanoi\obj\Debug\Torres_de_Hanoi.Properties.Resources.resources
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Torres_de_Hanoi\Torres_de_Hanoi\obj\Debug\Torres_de_Hanoi.csproj.GenerateResource.Cache
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Torres_de_Hanoi\Torres_de_Hanoi\obj\Debug\Torres_de_Hanoi.exe
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Torres_de_Hanoi\Torres_de_Hanoi\obj\Debug\Torres_de_Hanoi.pdb
