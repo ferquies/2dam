@@ -26,10 +26,12 @@
   and thus are ignored when reading this file. Do not forget to remove
   <!.. ..> that surrounds them.
 -->
+  <role rolename="manager-gui"/>
 <!--
-  <role rolename="tomcat"/>
   <role rolename="role1"/>
-  <user username="tomcat" password="tomcat" roles="tomcat"/>
+-->
+  <user username="admin" password="villena" roles="manager-gui"/>
+<!--
   <user username="both" password="tomcat" roles="tomcat,role1"/>
   <user username="role1" password="tomcat" roles="role1"/>
 -->

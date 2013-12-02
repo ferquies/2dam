@@ -1,4 +1,4 @@
-<%@ page import="ejemplo.*, java.util.*"%>
+<%@ page import="ejemplo.*,java.util.*"%>
 <html><head><title>LISTADO DE DEPARTAMENTOS</title></head>
 <body>
 <center> 

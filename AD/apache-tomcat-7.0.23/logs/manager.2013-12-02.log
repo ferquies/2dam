@@ -1,0 +1,64 @@
+dic 02, 2013 9:08:30 AM org.apache.catalina.core.ApplicationContext log
+Información: HTMLManager: init: Associated with Deployer 'Catalina:type=Deployer,host=localhost'
+dic 02, 2013 9:08:30 AM org.apache.catalina.core.ApplicationContext log
+Información: HTMLManager: init: Global resources are available
+dic 02, 2013 9:08:30 AM org.apache.catalina.core.ApplicationContext log
+Información: HTMLManager: list: Listing contexts for virtual host 'localhost'
+dic 02, 2013 9:08:37 AM org.apache.catalina.core.ApplicationContext log
+Información: HTMLManager: restart: Reloading web application '/ejemploMVC'
+dic 02, 2013 9:08:37 AM org.apache.catalina.core.ApplicationContext log
+Información: HTMLManager: list: Listing contexts for virtual host 'localhost'
+dic 02, 2013 9:18:23 AM org.apache.catalina.core.ApplicationContext log
+Información: HTMLManager: init: Associated with Deployer 'Catalina:type=Deployer,host=localhost'
+dic 02, 2013 9:18:23 AM org.apache.catalina.core.ApplicationContext log
+Información: HTMLManager: init: Global resources are available
+dic 02, 2013 9:18:23 AM org.apache.catalina.core.ApplicationContext log
+Información: HTMLManager: restart: Reloading web application '/ejemploMVC'
+dic 02, 2013 9:18:24 AM org.apache.catalina.core.ApplicationContext log
+Información: HTMLManager: list: Listing contexts for virtual host 'localhost'
+dic 02, 2013 9:21:10 AM org.apache.catalina.core.ApplicationContext log
+Información: HTMLManager: list: Listing contexts for virtual host 'localhost'
+dic 02, 2013 9:21:18 AM org.apache.catalina.core.ApplicationContext log
+Información: HTMLManager: restart: Reloading web application '/ejemploMVC'
+dic 02, 2013 9:21:18 AM org.apache.catalina.core.ApplicationContext log
+Información: HTMLManager: list: Listing contexts for virtual host 'localhost'
+dic 02, 2013 9:44:56 AM org.apache.catalina.core.ApplicationContext log
+Información: HTMLManager: init: Associated with Deployer 'Catalina:type=Deployer,host=localhost'
+dic 02, 2013 9:44:56 AM org.apache.catalina.core.ApplicationContext log
+Información: HTMLManager: init: Global resources are available
+dic 02, 2013 9:44:56 AM org.apache.catalina.core.ApplicationContext log
+Información: HTMLManager: list: Listing contexts for virtual host 'localhost'
+dic 02, 2013 9:44:58 AM org.apache.catalina.core.ApplicationContext log
+Información: HTMLManager: list: Listing contexts for virtual host 'localhost'
+dic 02, 2013 9:44:59 AM org.apache.catalina.core.ApplicationContext log
+Información: HTMLManager: list: Listing contexts for virtual host 'localhost'
+dic 02, 2013 9:45:02 AM org.apache.catalina.core.ApplicationContext log
+Información: HTMLManager: restart: Reloading web application '/ejemploMVC'
+dic 02, 2013 9:45:02 AM org.apache.catalina.core.ApplicationContext log
+Información: HTMLManager: list: Listing contexts for virtual host 'localhost'
+dic 02, 2013 9:45:14 AM org.apache.catalina.core.ApplicationContext log
+Información: HTMLManager: sessions: Session information for web application '/ejemploMVC'
+dic 02, 2013 9:45:14 AM org.apache.catalina.core.ApplicationContext log
+Información: HTMLManager: sessions: Session expiration for 30 minutes '/ejemploMVC'
+dic 02, 2013 9:45:14 AM org.apache.catalina.core.ApplicationContext log
+Información: HTMLManager: list: Listing contexts for virtual host 'localhost'
+dic 02, 2013 9:45:16 AM org.apache.catalina.core.ApplicationContext log
+Información: HTMLManager: stop: Stopping web application '/ejemploMVC'
+dic 02, 2013 9:45:17 AM org.apache.catalina.core.ApplicationContext log
+Información: HTMLManager: list: Listing contexts for virtual host 'localhost'
+dic 02, 2013 9:45:20 AM org.apache.catalina.core.ApplicationContext log
+Información: HTMLManager: start: Starting web application '/ejemploMVC'
+dic 02, 2013 9:45:20 AM org.apache.catalina.core.ApplicationContext log
+Información: HTMLManager: list: Listing contexts for virtual host 'localhost'
+dic 02, 2013 9:45:23 AM org.apache.catalina.core.ApplicationContext log
+Información: HTMLManager: restart: Reloading web application '/ejemploMVC'
+dic 02, 2013 9:45:23 AM org.apache.catalina.core.ApplicationContext log
+Información: HTMLManager: list: Listing contexts for virtual host 'localhost'
+dic 02, 2013 9:47:03 AM org.apache.catalina.core.ApplicationContext log
+Información: HTMLManager: list: Listing contexts for virtual host 'localhost'
+dic 02, 2013 9:47:05 AM org.apache.catalina.core.ApplicationContext log
+Información: HTMLManager: sessions: Session information for web application '/ejemploMVC'
+dic 02, 2013 9:47:05 AM org.apache.catalina.core.ApplicationContext log
+Información: HTMLManager: sessions: Session expiration for 30 minutes '/ejemploMVC'
+dic 02, 2013 9:47:05 AM org.apache.catalina.core.ApplicationContext log
+Información: HTMLManager: list: Listing contexts for virtual host 'localhost'

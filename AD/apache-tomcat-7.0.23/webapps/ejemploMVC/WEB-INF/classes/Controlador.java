@@ -14,8 +14,7 @@ public void service(HttpServletRequest request, HttpServletResponse response)
  //pantalla de alta de departamento
  if(op.equals("alta"))
      response.sendRedirect("alta.jsp");
- 
- //se inserta departamento en la tabla 
+  //se inserta departamento en la tabla 
  if(op.equals("insertar")){
     ejemplo.Departamentos dep=(ejemplo.Departamentos)request.getAttribute("depart");//obtenerlos
     OperacionesBD operBD=new OperacionesBD();

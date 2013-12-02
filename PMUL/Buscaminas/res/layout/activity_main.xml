@@ -26,12 +26,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
-        <TextView
-            android:id="@+id/textTiempo"
-            android:layout_width="45dp"
+        <Chronometer
+            android:id="@+id/chronometer1"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0.02"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:text="Chronometer" />
 
         <Button
             android:id="@+id/ButtonBanderas"

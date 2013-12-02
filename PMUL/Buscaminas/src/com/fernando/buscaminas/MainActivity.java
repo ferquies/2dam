@@ -1,6 +1,7 @@
 package com.fernando.buscaminas;
 
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -11,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Chronometer;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -20,11 +22,17 @@ import com.fernando.buscaminas.SettingsActivity;
 
 public class MainActivity extends Activity {
 	protected Button botones[][];
+	protected boolean inicio = true;
 	protected int rows = 0, cols = 0, minas, banderas;
+	protected long tiempo = 0;
 	protected Drawable fondo;
 	
 	// Rellena la pantalla con los botones
 	public void rellenarPantalla() {
+		inicio = true;
+		tiempo = 0;
+		Chronometer cron = (Chronometer) findViewById(R.id.chronometer1);
+		cron.setBase(SystemClock.elapsedRealtime());
 		SharedPreferences prefe = getSharedPreferences("com.fernando.buscaminas_preferences", Context.MODE_PRIVATE);
 		rows = Integer.parseInt(prefe.getString("rows", "9"));
 		cols = Integer.parseInt(prefe.getString("cols", "5"));
@@ -43,8 +51,6 @@ public class MainActivity extends Activity {
 		btnReiniciar.setBackgroundResource(R.drawable.inicio);
 		TextView textMinas = (TextView) findViewById(R.id.textMinas);
 		textMinas.setText("Minas: " + String.valueOf(minas));
-		TextView textTiempo = (TextView) findViewById(R.id.textTiempo);
-		textTiempo.setText("00:00");
 		Button btnBanderas = (Button) findViewById(R.id.ButtonBanderas);
 		btnBanderas.setText(String.valueOf(banderas));
 		Random rand = new Random();
@@ -191,6 +197,9 @@ public class MainActivity extends Activity {
 	// Al pulsar sobre una mina muestra el contenido de cada posicion y cambia el
 	// texto del boton de reinicio
 	public void perder() {
+		Chronometer cron = (Chronometer) findViewById(R.id.chronometer1);
+		cron.stop();
+		tiempo = (SystemClock.elapsedRealtime()-cron.getBase());
 		for(int i = 0; i <= rows*cols; i++) {
 			int c = 0, f = 0, col = 0, fila = 0;
 			for(c = 0; c < cols; c++) {
@@ -502,6 +511,12 @@ public class MainActivity extends Activity {
 	// Listener de cada boton
 	private View.OnClickListener gestor = new View.OnClickListener() {
 		public void onClick(View v) {
+			if(inicio) {
+				Chronometer cron = (Chronometer) findViewById(R.id.chronometer1);
+				cron.setBase(SystemClock.elapsedRealtime()-tiempo);
+				cron.start();
+				inicio = false;
+			}
 			if(v.getTag() != "bandera") {
 				comprobar(v.getId());
 				v.setActivated(true);
@@ -514,6 +529,12 @@ public class MainActivity extends Activity {
 	// Listener de pulsacion larga para cada boton
 	private View.OnLongClickListener mantener = new View.OnLongClickListener() {
 		public boolean onLongClick(View v) {
+			if(inicio) {
+				Chronometer cron = (Chronometer) findViewById(R.id.chronometer1);
+				cron.setBase(SystemClock.elapsedRealtime()-tiempo);
+				cron.start();
+				inicio = false;
+			}
 			Button btnBanderas = (Button) findViewById(R.id.ButtonBanderas);
 			if(v.getTag() != "bandera") {
 				if(banderas > 0) {
@@ -542,6 +563,8 @@ public class MainActivity extends Activity {
 		public void onClick(View v) {
 			TableLayout layout = (TableLayout) findViewById(R.id.tableLayout);
 			layout.removeAllViews();
+			Chronometer cron = (Chronometer) findViewById(R.id.chronometer1);
+			cron.stop();
 			rellenarPantalla();
 		}
 	};
