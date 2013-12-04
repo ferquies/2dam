@@ -579,6 +579,7 @@ public class MainActivity extends Activity {
 		Button btnBanderas = (Button) findViewById(R.id.ButtonBanderas);
 		btnBanderas.setEnabled(false);
 		btnBanderas.setBackgroundResource(R.drawable.bandera);
+		btnBanderas.setTextColor(Color.rgb(255, 255, 255));
 	}
 
 	@Override
@@ -590,13 +591,13 @@ public class MainActivity extends Activity {
 	
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch(item.getItemId()) {
-		case R.id.preferencias:
-			Intent intent2 = new Intent(this, SettingsActivity.class);
-			startActivity(intent2);
-			break;
-		default:
-			return false;
-		}
+			case R.id.preferencias:
+				Intent intent2 = new Intent(this, SettingsActivity.class);
+				startActivity(intent2);
+				break;
+			default:
+				return false;
+			}
 		return true;
 	}
 }

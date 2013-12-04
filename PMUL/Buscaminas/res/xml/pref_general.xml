@@ -3,21 +3,35 @@
     <!-- NOTE: EditTextPreference accepts EditText attributes. -->
     <!-- NOTE: EditTextPreference's summary should be set to its value by the activity code. -->
     <EditTextPreference
-        android:capitalize="words"
         android:defaultValue="5"
-        android:inputType="textCapWords"
+        android:inputType="number"
         android:key="num_minas"
         android:maxLines="1"
         android:selectAllOnFocus="true"
         android:singleLine="true"
-        android:title="@string/num_minas" />
+        android:title="@string/num_minas"/>
 
     <!--
          NOTE: Hide buttons to simplify the UI. Users can touch outside the dialog to
          dismiss it.
     -->
     <!-- NOTE: ListPreference's summary should be set to its value by the activity code. -->
-    <EditTextPreference android:key="rows" android:title="@string/rows" android:defaultValue="8"/>
-    <EditTextPreference android:key="cols" android:title="@string/cols" android:defaultValue="4"/>
+    <EditTextPreference
+        android:key="rows"
+        android:title="@string/rows"
+        android:defaultValue="8"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:inputType="number"/>
+    
+    <EditTextPreference
+        android:key="cols"
+        android:title="@string/cols"
+        android:defaultValue="4"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:inputType="number"/>
 
 </PreferenceScreen>
