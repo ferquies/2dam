@@ -2,17 +2,17 @@
 #include <omp.h>
 
 int main() {
-    int array[] = {0,1,2,3,4,5,6,7,8,9};
-    int iam = 0, np = 1, inicio, fin;
+    int array[] = {12,432,23,435,65,2,657,456,98,16,78,54};
     
+    // omp_set_num_threads(4);
     #pragma omp parallel
     {
-	np = omp_get_num_threads();
-	iam = omp_get_thread_num();
-	inicio = 10 * iam;
-	fin = inicio + 9;
+	int np = omp_get_num_threads();
+	int iam = omp_get_thread_num();
+	int inicio = 3 * iam;
+	int fin = inicio + 3;
 	for(inicio; inicio < fin; inicio++) {
-	    printf("thread %d - array %d\n",iam,array[inicio]);
+	    printf("Thread %d of %d - array[%d] %d\n",iam,np,inicio,array[inicio]);
 	}
     }
     
