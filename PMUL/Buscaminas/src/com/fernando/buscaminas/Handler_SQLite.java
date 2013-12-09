@@ -16,8 +16,8 @@ public class Handler_SQLite extends SQLiteOpenHelper {
 	
 	@Override
 	public void onCreate(SQLiteDatabase bd) {
-		String query = "CREATE TABLE puntuacion (" + _ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-				"nombre VARCHAR(20), tiempo DOUBLE;";
+		String query = "CREATE TABLE puntuacion (" + _ID + " INTEGER PRIMARY KEY, " +
+				"nombre VARCHAR(20), tiempo INTEGER(32))";
 		bd.execSQL(query);
 	}
 	
@@ -28,15 +28,19 @@ public class Handler_SQLite extends SQLiteOpenHelper {
 	}
 	
 	public void insertar(String nombre, double tiempo) {
-		ContentValues valores = new ContentValues();
-		valores.put("nombre", nombre);
-		valores.put("tiempo", tiempo);
-		this.getWritableDatabase().insert("puntuacion", null, valores);
+		Cursor c = this.getReadableDatabase().rawQuery("SELECT * FROM puntuacion ORDER BY tiempo ASC", null);
+		c.moveToLast();
+		if(c.getCount() < 10 || tiempo <= c.getInt(c.getColumnIndex("tiempo"))) {
+			ContentValues valores = new ContentValues();
+			valores.put("nombre", nombre);
+			valores.put("tiempo", tiempo);
+			this.getWritableDatabase().insert("puntuacion", null, valores);
+		}
 	}
 	
 	public String[] leer() {
-		String result[] = new String[10];
 		Cursor c = this.getReadableDatabase().rawQuery("SELECT * FROM puntuacion ORDER BY tiempo ASC LIMIT 10", null);
+		String result[] = new String[c.getCount()];
 		int inom, itie;
 		
 		inom = c.getColumnIndex("nombre");
@@ -44,8 +48,8 @@ public class Handler_SQLite extends SQLiteOpenHelper {
 		
 		c.moveToFirst();
 		
-		for(int i = 0; i < 10; i++) {
-			result[i] = i + "\t" + c.getString(inom) + "\t" + c.getInt(itie) + "\n";
+		for(int i = 0; i < c.getCount(); i++) {
+			result[i] = i+1 + "\t" + c.getString(inom) + "\t" + c.getInt(itie)/1000.00 + "\n";
 			c.moveToNext();
 		}
 

@@ -26,9 +26,15 @@ public class MainActivity extends Activity {
 	protected int rows = 0, cols = 0, minas, banderas;
 	protected long tiempo = 0;
 	protected Drawable fondo;
+	protected Handler_SQLite helper = new Handler_SQLite(this);
 	
 	// Rellena la pantalla con los botones
 	public void rellenarPantalla() {
+		String lec[]  = helper.leer();
+		System.out.println("Posicion\tNombre\tTiempo");
+		for(int i = 0; i < lec.length; i++) {
+			System.out.println(lec[i]);
+		}
 		inicio = true;
 		tiempo = 0;
 		Chronometer cron = (Chronometer) findViewById(R.id.chronometer1);
@@ -197,6 +203,7 @@ public class MainActivity extends Activity {
 	// Al pulsar sobre una mina muestra el contenido de cada posicion y cambia el
 	// texto del boton de reinicio
 	public void perder() {
+		helper.close();
 		Chronometer cron = (Chronometer) findViewById(R.id.chronometer1);
 		cron.stop();
 		tiempo = (SystemClock.elapsedRealtime()-cron.getBase());
@@ -506,6 +513,7 @@ public class MainActivity extends Activity {
 		perder();
 		Button btnReiniciar = (Button) findViewById(R.id.btnReiniciar);
 		btnReiniciar.setBackgroundResource(R.drawable.ganar);
+		helper.insertar("Fernando", tiempo);
 	}
 	
 	// Listener de cada boton
