@@ -1,0 +1,8 @@
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Mouse_move\Mouse_move\bin\Debug\Mouse_move.exe.config
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Mouse_move\Mouse_move\bin\Debug\Mouse_move.exe
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Mouse_move\Mouse_move\bin\Debug\Mouse_move.pdb
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Mouse_move\Mouse_move\obj\Debug\Mouse_move.Form1.resources
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Mouse_move\Mouse_move\obj\Debug\Mouse_move.Properties.Resources.resources
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Mouse_move\Mouse_move\obj\Debug\Mouse_move.csproj.GenerateResource.Cache
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Mouse_move\Mouse_move\obj\Debug\Mouse_move.exe
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Mouse_move\Mouse_move\obj\Debug\Mouse_move.pdb

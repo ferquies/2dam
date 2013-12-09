@@ -1,0 +1,9 @@
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Picturebox2\Picturebox2\bin\Debug\Picturebox2.exe.config
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Picturebox2\Picturebox2\bin\Debug\Picturebox2.exe
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Picturebox2\Picturebox2\bin\Debug\Picturebox2.pdb
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Picturebox2\Picturebox2\obj\Debug\Picturebox2.csprojResolveAssemblyReference.cache
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Picturebox2\Picturebox2\obj\Debug\Picturebox2.Form1.resources
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Picturebox2\Picturebox2\obj\Debug\Picturebox2.Properties.Resources.resources
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Picturebox2\Picturebox2\obj\Debug\Picturebox2.csproj.GenerateResource.Cache
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Picturebox2\Picturebox2\obj\Debug\Picturebox2.exe
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Picturebox2\Picturebox2\obj\Debug\Picturebox2.pdb
