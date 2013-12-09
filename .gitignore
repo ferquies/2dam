@@ -2,6 +2,7 @@
 *~
 
 # Package Files #
+*.pdb
 *.jar
 *.war
 *.ear
