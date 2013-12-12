@@ -1,7 +1,5 @@
 package com.fernando.adapterusuario;
 
-import android.widget.ImageView;
-
 public class Contacto {
 	protected String nombre, telefono, email;
 	protected int image;
