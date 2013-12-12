@@ -1,0 +1,6 @@
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Prueba4_Examen\Prueba4_Examen\bin\Debug\Prueba4_Examen.exe.config
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Prueba4_Examen\Prueba4_Examen\bin\Debug\Prueba4_Examen.exe
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Prueba4_Examen\Prueba4_Examen\bin\Debug\Prueba4_Examen.pdb
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Prueba4_Examen\Prueba4_Examen\obj\Debug\Prueba4_Examen.csprojResolveAssemblyReference.cache
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Prueba4_Examen\Prueba4_Examen\obj\Debug\Prueba4_Examen.exe
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Prueba4_Examen\Prueba4_Examen\obj\Debug\Prueba4_Examen.pdb

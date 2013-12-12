@@ -1,0 +1,8 @@
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Picturebox\Picturebox\bin\Debug\Picturebox.exe.config
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Picturebox\Picturebox\bin\Debug\Picturebox.exe
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Picturebox\Picturebox\bin\Debug\Picturebox.pdb
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Picturebox\Picturebox\obj\Debug\Picturebox.Form1.resources
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Picturebox\Picturebox\obj\Debug\Picturebox.Properties.Resources.resources
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Picturebox\Picturebox\obj\Debug\Picturebox.csproj.GenerateResource.Cache
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Picturebox\Picturebox\obj\Debug\Picturebox.exe
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Picturebox\Picturebox\obj\Debug\Picturebox.pdb
