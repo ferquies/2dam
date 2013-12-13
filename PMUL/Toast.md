@@ -1,5 +1,4 @@
-#Toast
-
+ #Toast
 1) Crear un Toast normal
 ```
 Toast tosta = Toast.makeText(this, "text", Toast.LENGHT_SHORT);
@@ -12,7 +11,7 @@ Toast tosta = Toast.makeText(this, "text", Toast.LENGHT_SHORT);
 tosta.show();
 ```
 
-2) Crear un Toast personalizado
+2) Crear un Toast personlizado
 ```
 Toast tosta = new Toast(getApplicationContext());
 View layout = getLayoutInflater().inflate(R.layout.layToast, null);
