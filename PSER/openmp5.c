@@ -6,11 +6,11 @@ int main() {
     
     #pragma omp parallel shared(i) private(iam, np)
     {
-	iam = omp_get_thread_num();
-	for(np = 0; np < 50; np++) {
-	    #pragma omp atomic
-	    i++;
-	}
+		iam = omp_get_thread_num();
+		for(np = 0; np < 50; np++) {
+		    #pragma omp atomic
+		    i++;
+		}
     }
     
     printf("Valor de i: %d\n", i);

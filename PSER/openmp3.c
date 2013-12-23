@@ -8,12 +8,12 @@ int main() {
     //omp_set_num_threads(4);
     #pragma omp parallel private(i, iam)
     {
-	#pragma omp for
-	for(i = 0; i < N; i++) {
-	    np = omp_get_num_threads();
-	    iam = omp_get_thread_num();
-	    printf("Thread %d of %d - array[%d] %d\n",iam+1,np,i,array[i]);
-	}
+		#pragma omp for
+		for(i = 0; i < N; i++) {
+	    	np = omp_get_num_threads();
+		    iam = omp_get_thread_num();
+		    printf("Thread %d of %d - array[%d] %d\n",iam+1,np,i,array[i]);
+		}
     }
     
     return 0;
