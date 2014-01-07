@@ -26,10 +26,11 @@ public class MainActivity extends Activity {
 	protected int rows = 0, cols = 0, minas, banderas;
 	protected long tiempo = 0;
 	protected Drawable fondo;
-	protected Handler_SQLite helper = new Handler_SQLite(this);
+	protected Handler_SQLite helper;
 	
 	// Rellena la pantalla con los botones
 	public void rellenarPantalla() {
+		helper = new Handler_SQLite(this);
 		String lec[]  = helper.leer();
 		System.out.println("Posicion\tNombre\tTiempo");
 		for(int i = 0; i < lec.length; i++) {
@@ -513,6 +514,7 @@ public class MainActivity extends Activity {
 		perder();
 		Button btnReiniciar = (Button) findViewById(R.id.btnReiniciar);
 		btnReiniciar.setBackgroundResource(R.drawable.ganar);
+		helper = new Handler_SQLite(this);
 		helper.insertar("Fernando", tiempo);
 	}
 	

@@ -29,17 +29,24 @@ public class Handler_SQLite extends SQLiteOpenHelper {
 	
 	public void insertar(String nombre, double tiempo) {
 		Cursor c = this.getReadableDatabase().rawQuery("SELECT * FROM puntuacion ORDER BY tiempo ASC", null);
-		c.moveToLast();
-		if(c.getCount() < 10 || tiempo <= c.getInt(c.getColumnIndex("tiempo"))) {
+		int registros = c.getCount();
+		if(registros != 0) {
+			c.moveToLast();
+		}
+		if(registros < 10 || tiempo <= c.getInt(c.getColumnIndex("tiempo"))) {
 			ContentValues valores = new ContentValues();
 			valores.put("nombre", nombre);
 			valores.put("tiempo", tiempo);
 			this.getWritableDatabase().insert("puntuacion", null, valores);
+			if(c.getCount() > 9) {
+				String consulta = "DELETE FROM puntuacion WHERE tiempo = (SELECT MAX(tiempo) FROM puntuacion)";
+				this.getWritableDatabase().execSQL(consulta);
+			}
 		}
 	}
 	
 	public String[] leer() {
-		Cursor c = this.getReadableDatabase().rawQuery("SELECT * FROM puntuacion ORDER BY tiempo ASC LIMIT 10", null);
+		Cursor c = this.getReadableDatabase().rawQuery("SELECT * FROM puntuacion ORDER BY tiempo ASC", null);
 		String result[] = new String[c.getCount()];
 		int inom, itie;
 		
