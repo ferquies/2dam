@@ -1,0 +1,9 @@
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Teclas\Teclas\bin\Debug\Teclas.exe.config
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Teclas\Teclas\bin\Debug\Teclas.exe
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Teclas\Teclas\bin\Debug\Teclas.pdb
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Teclas\Teclas\obj\Debug\Teclas.csprojResolveAssemblyReference.cache
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Teclas\Teclas\obj\Debug\Teclas.Form1.resources
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Teclas\Teclas\obj\Debug\Teclas.Properties.Resources.resources
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Teclas\Teclas\obj\Debug\Teclas.csproj.GenerateResource.Cache
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Teclas\Teclas\obj\Debug\Teclas.exe
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Teclas\Teclas\obj\Debug\Teclas.pdb
