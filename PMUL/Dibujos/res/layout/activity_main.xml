@@ -8,28 +8,14 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity" >
 
-    <FrameLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true" >
-
-        <TextView
-            android:id="@+id/textView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TextView" />
-    </FrameLayout>
-
     <LinearLayout
         android:id="@+id/linearLayout1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:layout_toLeftOf="@+id/frameLayout1"
         android:orientation="vertical" >
 
         <TextView
@@ -40,7 +26,7 @@
 
         <SeekBar
             android:id="@+id/SeekBarRadio1"
-            android:layout_width="182dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
         <TextView
@@ -51,7 +37,7 @@
 
         <SeekBar
             android:id="@+id/seekBarRadio2"
-            android:layout_width="182dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
         <TextView
@@ -62,7 +48,7 @@
 
         <SeekBar
             android:id="@+id/SeekBarVeloc1"
-            android:layout_width="182dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
         <TextView
@@ -73,20 +59,33 @@
 
         <SeekBar
             android:id="@+id/SeekBarVeloc2"
-            android:layout_width="182dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
-        <Button
-            android:id="@+id/buttonVer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Ver" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
 
-        <Button
-            android:id="@+id/buttonBorrar"
+            <Button
+                android:id="@+id/buttonDibujar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dibujar" />
+
+            <Button
+                android:id="@+id/buttonBorrar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Borrar" />
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/frameLayout"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Borrar" />
+            android:layout_height="wrap_content" >
+
+        </FrameLayout>
 
     </LinearLayout>
 
