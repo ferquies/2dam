@@ -16,10 +16,10 @@ import android.widget.SeekBar.OnSeekBarChangeListener;
 
 public class MainActivity extends Activity {
 	protected Context context = this;
-	protected float r1;
-	protected float r2;
-	protected double w1;
-	protected double w2;
+	protected float r1 = 0;
+	protected float r2 = 0;
+	protected double w1 = 0;
+	protected double w2 = 0;
 	
 	private View.OnClickListener gestor = new View.OnClickListener() {
 		public void onClick(View v) {
@@ -60,6 +60,10 @@ public class MainActivity extends Activity {
 		public void onProgressChanged(SeekBar arg0, int arg1, boolean arg2) {
 			// TODO Auto-generated method stub
 			r1 = arg1;
+			FrameLayout fl = (FrameLayout) findViewById(R.id.frameLayout);
+			MiVista mv = new MiVista(context);
+			fl.removeAllViews();
+			fl.addView(mv);
 		}
 
 		@Override
@@ -82,6 +86,10 @@ public class MainActivity extends Activity {
 		public void onProgressChanged(SeekBar arg0, int arg1, boolean arg2) {
 			// TODO Auto-generated method stub
 			r2 = arg1;
+			FrameLayout fl = (FrameLayout) findViewById(R.id.frameLayout);
+			MiVista mv = new MiVista(context);
+			fl.removeAllViews();
+			fl.addView(mv);
 		}
 
 		@Override
@@ -104,6 +112,10 @@ public class MainActivity extends Activity {
 		public void onProgressChanged(SeekBar arg0, int arg1, boolean arg2) {
 			// TODO Auto-generated method stub
 			w1 = arg1;
+			FrameLayout fl = (FrameLayout) findViewById(R.id.frameLayout);
+			MiVista mv = new MiVista(context);
+			fl.removeAllViews();
+			fl.addView(mv);
 		}
 
 		@Override
@@ -126,6 +138,10 @@ public class MainActivity extends Activity {
 		public void onProgressChanged(SeekBar arg0, int arg1, boolean arg2) {
 			// TODO Auto-generated method stub
 			w2 = arg1;
+			FrameLayout fl = (FrameLayout) findViewById(R.id.frameLayout);
+			MiVista mv = new MiVista(context);
+			fl.removeAllViews();
+			fl.addView(mv);
 		}
 
 		@Override
