@@ -1,0 +1,9 @@
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\SistemaGestion\SistemaGestion\bin\Debug\SistemaGestion.exe.config
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\SistemaGestion\SistemaGestion\bin\Debug\SistemaGestion.exe
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\SistemaGestion\SistemaGestion\bin\Debug\SistemaGestion.pdb
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\SistemaGestion\SistemaGestion\obj\Debug\SistemaGestion.csprojResolveAssemblyReference.cache
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\SistemaGestion\SistemaGestion\obj\Debug\SistemaGestion.Form1.resources
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\SistemaGestion\SistemaGestion\obj\Debug\SistemaGestion.Properties.Resources.resources
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\SistemaGestion\SistemaGestion\obj\Debug\SistemaGestion.csproj.GenerateResource.Cache
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\SistemaGestion\SistemaGestion\obj\Debug\SistemaGestion.exe
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\SistemaGestion\SistemaGestion\obj\Debug\SistemaGestion.pdb
