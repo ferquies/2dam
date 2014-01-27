@@ -1,0 +1,9 @@
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\LeerFichero\LeerFichero\bin\Debug\LeerFichero.exe.config
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\LeerFichero\LeerFichero\bin\Debug\LeerFichero.exe
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\LeerFichero\LeerFichero\bin\Debug\LeerFichero.pdb
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\LeerFichero\LeerFichero\obj\Debug\LeerFichero.csprojResolveAssemblyReference.cache
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\LeerFichero\LeerFichero\obj\Debug\LeerFichero.Form1.resources
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\LeerFichero\LeerFichero\obj\Debug\LeerFichero.Properties.Resources.resources
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\LeerFichero\LeerFichero\obj\Debug\LeerFichero.csproj.GenerateResource.Cache
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\LeerFichero\LeerFichero\obj\Debug\LeerFichero.exe
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\LeerFichero\LeerFichero\obj\Debug\LeerFichero.pdb
