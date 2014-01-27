@@ -1,0 +1,19 @@
+{
+"estudiantes": [
+	{
+	"Nombre" : "Elena",
+	"Apellido" : "Martinez",
+	"Curso" : "1ºDAM"
+	},
+	{
+	"Nombre" : "Fernando",
+	"Apellido" : "Quilez",
+	"Curso" : "2ºDAM"
+	},
+	{
+	"Nombre" : "Juan",
+	"Apellido" : "Castro",
+	"Curso" : "2ºDAM"
+	}
+	]
+}
