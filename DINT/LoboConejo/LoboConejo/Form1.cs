@@ -55,6 +55,7 @@ namespace LoboConejo
         private bool down = false;
         private bool left = false;
         private bool right = false;
+        private int velocidad = 2;
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -72,10 +73,10 @@ namespace LoboConejo
             if (labelLobo.Location.Y < labelConejo.Location.Y) { ylobo++; }
             if (labelLobo.Location.Y > labelConejo.Location.Y) { ylobo--; }
 
-            if (up) { yconejo -= 2; }
-            if (down) { yconejo += 2; }
-            if (left) { xconejo -= 2; }
-            if (right) { xconejo += 2; }
+            if (up) { yconejo -= velocidad; }
+            if (down) { yconejo += velocidad; }
+            if (left) { xconejo -= velocidad; }
+            if (right) { xconejo += velocidad; }
 
             if (xlobo <= xconejo + wconejo && xlobo + wlobo > xconejo && ylobo < yconejo + hconejo && ylobo + hlobo > yconejo)
             {
@@ -89,6 +90,7 @@ namespace LoboConejo
                     up = down = left = right = false;
                     num_zanahorias = longitud / 2;
                     for (int i = 0; i < num_zanahorias; i++) { zanahorias[i].Visible = true; }
+                    velocidad = 2;
                     timer1.Start();
                 }
             }
@@ -101,6 +103,7 @@ namespace LoboConejo
                     {
                         zanahorias[i].Visible = false;
                         num_zanahorias--;
+                        velocidad++;
                     }
                 }
             }
@@ -117,6 +120,7 @@ namespace LoboConejo
                     up = down = left = right = false;
                     num_zanahorias = longitud / 2;
                     for (int i = 0; i < num_zanahorias; i++) { zanahorias[i].Visible = true; }
+                    velocidad = 2;
                     timer1.Start();
                 }
             }
