@@ -110,10 +110,7 @@ namespace LoboConejo
                 }
             }
 
-            if(velocidad > 2)
-            {
-                pasos++;
-            }
+            if(velocidad > 2) pasos++;
 
             if (num_zanahorias == 0)
             {
@@ -133,11 +130,7 @@ namespace LoboConejo
                 }
             }
 
-            if (pasos == 20)
-            {
-                velocidad--;
-                pasos = 0;
-            }
+            if (pasos == 20) { velocidad--; pasos = 0; }
 
             labelLobo.Location = new Point(xlobo, ylobo);
             labelConejo.Location = new Point(xconejo, yconejo);
