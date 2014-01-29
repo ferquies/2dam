@@ -56,6 +56,7 @@ namespace LoboConejo
         private bool left = false;
         private bool right = false;
         private int velocidad = 2;
+        private int pasos = 0;
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -91,6 +92,7 @@ namespace LoboConejo
                     num_zanahorias = longitud / 2;
                     for (int i = 0; i < num_zanahorias; i++) { zanahorias[i].Visible = true; }
                     velocidad = 2;
+                    pasos = 0;
                     timer1.Start();
                 }
             }
@@ -108,6 +110,11 @@ namespace LoboConejo
                 }
             }
 
+            if(velocidad > 2)
+            {
+                pasos++;
+            }
+
             if (num_zanahorias == 0)
             {
                 timer1.Stop();
@@ -121,8 +128,15 @@ namespace LoboConejo
                     num_zanahorias = longitud / 2;
                     for (int i = 0; i < num_zanahorias; i++) { zanahorias[i].Visible = true; }
                     velocidad = 2;
+                    pasos = 0;
                     timer1.Start();
                 }
+            }
+
+            if (pasos == 20)
+            {
+                velocidad--;
+                pasos = 0;
             }
 
             labelLobo.Location = new Point(xlobo, ylobo);
