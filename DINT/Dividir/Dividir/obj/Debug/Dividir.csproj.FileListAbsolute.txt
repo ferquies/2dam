@@ -1,0 +1,9 @@
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Dividir\Dividir\bin\Debug\Dividir.exe.config
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Dividir\Dividir\bin\Debug\Dividir.exe
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Dividir\Dividir\bin\Debug\Dividir.pdb
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Dividir\Dividir\obj\Debug\Dividir.csprojResolveAssemblyReference.cache
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Dividir\Dividir\obj\Debug\Dividir.Form1.resources
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Dividir\Dividir\obj\Debug\Dividir.Properties.Resources.resources
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Dividir\Dividir\obj\Debug\Dividir.csproj.GenerateResource.Cache
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Dividir\Dividir\obj\Debug\Dividir.exe
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\Dividir\Dividir\obj\Debug\Dividir.pdb
