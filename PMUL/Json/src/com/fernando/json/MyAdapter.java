@@ -1,5 +1,13 @@
 package com.fernando.json;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,11 +21,35 @@ public class MyAdapter extends BaseAdapter {
 	protected Context _contexto;
 
 	public MyAdapter(Context context, int layoutmuestra,
-			Estudiante[] valores_estudiante) {
+			String json) {
 		super();
-		this._estudiante = valores_estudiante;
-		this._layout_ref = layoutmuestra;
-		this._contexto = context;
+		try {
+			StringBuffer sb = new StringBuffer();
+			BufferedReader br = new BufferedReader(new InputStreamReader(context.getAssets().open(json)));
+			
+			String tmp;
+			while((tmp = br.readLine()) != null) {
+				sb.append(tmp);
+			}
+			
+			String JsonText = sb.toString();
+			
+			JSONObject jsonobj = new JSONObject(JsonText);
+			JSONArray jsarr = jsonobj.getJSONArray("estudiantes");
+			
+			Estudiante [] valores_estudiante = new Estudiante[jsarr.length()];
+			
+			for(int i = 0; i < jsarr.length(); i++) {
+				JSONObject elem = jsarr.getJSONObject(i);
+				valores_estudiante[i] = new Estudiante(elem.getString("Nombre"), elem.getString("Apellido"), elem.getString("Curso"));
+			}
+			
+			this._estudiante = valores_estudiante;
+			this._layout_ref = layoutmuestra;
+			this._contexto = context;
+			br.close();
+		} catch(JSONException e) { e.printStackTrace(); }
+		catch(IOException e) { e.printStackTrace(); }
 	}
 
 	@Override
