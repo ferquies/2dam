@@ -1,0 +1,43 @@
+control.setOnLongClickListener(new OnLongClickListener() {
+	public boolean onClickListener(View v) {
+		ClipData.Item item = new ClipData.Item(v.getTag());
+		ClipData data = new ClipData(v.getTag(), ClipData.MIMETYPE_TEXT_PLAIN, item);
+		v.startDrag(data, sombra, NULL, 0);
+	}
+}
+ 
+vistadestino.setOnDragListener...
+...
+public boolean onDrag(View v, DragEvent evento) {
+	int action = evento.getAction();
+	switch(action) {
+		case DragEvent.ACTION_DRAG_ENTERED:
+		.
+		.
+	 	.
+		return true/false;
+ 
+		case DragEvent.ACTION_DRAG_LOCATION:
+		.
+		.
+		.
+		return true/false;
+ 
+	case DragEvent.ACTION_DRAG_EXITED:
+		.
+		.
+		.
+		return true/false;
+
+		
+---------------------------------------------------
+ 
+Eventos adicionales de OnDrag: 
+ACTION_DRAG_STARTED: Arranca con la operacion de arrastre.
+	evento.getClipData() -> ClipData
+	return true/false;
+
+ACTION_DROP: 
+	evento.getClipData() -> ClipData
+
+ACTION_DRAG_ENDED -> Cuando se acaba la operacion de Drag and Drop 
