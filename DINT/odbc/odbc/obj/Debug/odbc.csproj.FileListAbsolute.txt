@@ -1,0 +1,9 @@
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\odbc\odbc\bin\Debug\odbc.exe.config
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\odbc\odbc\bin\Debug\odbc.exe
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\odbc\odbc\bin\Debug\odbc.pdb
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\odbc\odbc\obj\Debug\odbc.csprojResolveAssemblyReference.cache
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\odbc\odbc\obj\Debug\odbc.Form1.resources
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\odbc\odbc\obj\Debug\odbc.Properties.Resources.resources
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\odbc\odbc\obj\Debug\odbc.csproj.GenerateResource.Cache
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\odbc\odbc\obj\Debug\odbc.exe
+C:\Users\Fernando\Documents\GitHub\2dam\DINT\odbc\odbc\obj\Debug\odbc.pdb
