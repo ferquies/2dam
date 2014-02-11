@@ -110,7 +110,7 @@ public class MainActivity extends Activity {
 		protected void onPostExecute(String s)
 		{
 			TextView text = (TextView) findViewById(R.id.textView1);
-			text.setText(text.getText() + s);
+			text.setText(s);
 			Toast toast = Toast.makeText(context, "¡Terminado!", Toast.LENGTH_SHORT);
 			toast.show();
 		}
