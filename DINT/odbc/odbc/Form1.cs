@@ -24,7 +24,6 @@ namespace odbc
         //OdbcConnection connect = new OdbcConnection("DSN=pruebas");
         OleDbConnection connect = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/Fernando/Documents/GitHub/2dam/DINT/prueba.accdb");
         
-
         private void button1_Click(object sender, EventArgs e)
         {
             if (connect.State == ConnectionState.Open)
