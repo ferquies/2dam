@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="21" version="2.0">
+<workbench progressCount="15" version="2.0">
 <workbenchAdvisor/>
-<window height="742" maximized="true" width="1020" x="70" y="24">
+<window height="736" maximized="true" width="1014" x="69" y="0">
 <fastViewData fastViewLocation="1024"/>
 <perspectiveBar>
 <itemSize x="160"/>
 </perspectiveBar>
 <coolbarLayout>
 <coolItem id="group.file" itemType="typeGroupMarker"/>
-<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="144" y="30"/>
+<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="132" y="26"/>
 <coolItem id="additions" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.debug.ui.launch.toolbar" itemType="typeToolBarContribution" x="-1" y="-1"/>
-<coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="156" y="30"/>
-<coolItem id="org.eclipse.debug.ui.main.toolbar" itemType="typeToolBarContribution" x="40" y="30"/>
-<coolItem id="org.eclipse.jdt.ui.JavaElementCreationActionSet" itemType="typeToolBarContribution" x="88" y="30"/>
-<coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="88" y="30"/>
-<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="124" y="30"/>
+<coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="142" y="26"/>
+<coolItem id="org.eclipse.debug.ui.main.toolbar" itemType="typeToolBarContribution" x="36" y="26"/>
+<coolItem id="org.eclipse.jdt.ui.JavaElementCreationActionSet" itemType="typeToolBarContribution" x="80" y="26"/>
+<coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="80" y="26"/>
+<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="114" y="26"/>
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
-<coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="232" y="30"/>
+<coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="212" y="26"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
@@ -34,9 +34,9 @@
 </folder>
 </info>
 </editorArea>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="db4o.java" partName="db4o.java" path="/home/fernando/Documentos/DAM/Segundo/2dam/AD/db4o/src/db4o.java" title="db4o.java" tooltip="db4o/src/db4o.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/db4o/src/db4o.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="62" selectionTopPixel="0"/>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="EjemploNeodatis.java" partName="EjemploNeodatis.java" path="/home/fernando/Documentos/DAM/Segundo/2dam/AD/EjemploNeodatis/src/EjemploNeodatis.java" title="EjemploNeodatis.java" tooltip="EjemploNeodatis/src/EjemploNeodatis.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/EjemploNeodatis/src/EjemploNeodatis.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="609" selectionTopPixel="0"/>
 </editor>
 </editors>
 <views>
@@ -282,6 +282,7 @@
 <navigationHistory>
 <editors>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/db4o/src/db4o.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/EjemploNeodatis/src/EjemploNeodatis.java"/>
 </editors>
 <item historyLabel="db4o.java" index="0">
 <position info="not_deleted" x="3058" y="0"/>
@@ -298,8 +299,26 @@
 <item historyLabel="db4o.java" index="0">
 <position info="not_deleted" x="3052" y="0"/>
 </item>
-<item active="true" historyLabel="db4o.java" index="0">
-<position/>
+<item historyLabel="db4o.java" index="0">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="EjemploNeodatis.java" index="1">
+<position info="not_deleted" x="612" y="0"/>
+</item>
+<item historyLabel="EjemploNeodatis.java" index="1">
+<position info="not_deleted" x="128" y="0"/>
+</item>
+<item historyLabel="EjemploNeodatis.java" index="1">
+<position info="not_deleted" x="299" y="4"/>
+</item>
+<item historyLabel="EjemploNeodatis.java" index="1">
+<position info="not_deleted" x="399" y="0"/>
+</item>
+<item historyLabel="EjemploNeodatis.java" index="1">
+<position info="not_deleted" x="519" y="0"/>
+</item>
+<item active="true" historyLabel="EjemploNeodatis.java" index="1">
+<position info="not_deleted" x="582" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -318,6 +337,9 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="EjemploNeodatis.java" tooltip="EjemploNeodatis/src/EjemploNeodatis.java">
+<persistable path="/EjemploNeodatis/src/EjemploNeodatis.java"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="db4o.java" tooltip="db4o/src/db4o.java">
 <persistable path="/db4o/src/db4o.java"/>
 </file>
