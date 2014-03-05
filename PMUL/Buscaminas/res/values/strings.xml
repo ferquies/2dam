@@ -8,5 +8,17 @@
     <string name="num_minas">Número de minas</string>
     <string name="rows">Número de filas</string>
     <string name="cols">Número de columnas</string>
+    <string name="win">¡Has ganado!</string>
+    <string name="title_activity_about">Acerca de</string>
+    <string name="acerca_de">Buscaminas creado por Fernando Quilez Esquitino para la asignatura de PMUL de 2º de Desarrollo de Aplicaciones Multiplataforma</string>
+    <string name="egg0">¡Tu! ¡Deja de tocarme! :@</string>
+    <string name="egg1">En serio, ¡deja de tocarme! :@@</string>
+    <string name="egg2">No te lo repito más veces, deja de tocarme.</string>
+    <string name="egg3">En serio, olvídame ¬¬</string>
+    <string name="title_activity_ranking">Ranking</string>
+    <string name="ranking">Mejores puntuaciones</string>
+    <string name="reset">Reiniciar puntuaciones</string>
+    <string name="mines">Minas: </string>
+    <string name="lose">Has perdido</string>
 
 </resources>

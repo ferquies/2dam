@@ -4,5 +4,13 @@
         android:id="@+id/preferencias"
         android:orderInCategory="100"
         android:title="@string/Preferencias"/>
+    <item
+        android:id="@+id/ranking"
+        android:orderInCategory="100"
+        android:title="@string/title_activity_ranking"/>
+    <item
+        android:id="@+id/about"
+        android:orderInCategory="100"
+        android:title="@string/title_activity_about"/>
 
 </menu>

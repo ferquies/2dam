@@ -1,9 +1,12 @@
 package com.fernando.buscaminas;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -13,29 +16,30 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Chronometer;
+import android.widget.EditText;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import java.util.Random;
+
 import com.fernando.buscaminas.R;
 import com.fernando.buscaminas.SettingsActivity;
 
 public class MainActivity extends Activity {
+	protected Context context;
 	protected Button botones[][];
 	protected boolean inicio = true;
-	protected int rows = 0, cols = 0, minas, banderas;
+	protected int rows = 0, cols = 0, minas, banderas, m;
 	protected long tiempo = 0;
 	protected Drawable fondo;
 	protected Handler_SQLite helper;
+	protected MediaPlayer rep;
+	protected MediaPlayer plip;
 	
 	// Rellena la pantalla con los botones
 	public void rellenarPantalla() {
-		helper = new Handler_SQLite(this);
-		String lec[]  = helper.leer();
-		System.out.println("Posicion\tNombre\tTiempo");
-		for(int i = 0; i < lec.length; i++) {
-			System.out.println(lec[i]);
-		}
 		inicio = true;
 		tiempo = 0;
 		Chronometer cron = (Chronometer) findViewById(R.id.chronometer1);
@@ -53,6 +57,7 @@ public class MainActivity extends Activity {
 		} else {
 			minas = Integer.parseInt(n);
 		}
+		m = minas;
 		banderas = minas;
 		Button btnReiniciar = (Button) findViewById(R.id.btnReiniciar);
 		btnReiniciar.setBackgroundResource(R.drawable.inicio);
@@ -436,9 +441,14 @@ public class MainActivity extends Activity {
 			}
 		}
 		if(botones[fila][col].isSelected()) {
+			rep = MediaPlayer.create(this, R.raw.explosion);
+			rep.start();
+			Toast toast = Toast.makeText(context, R.string.lose, Toast.LENGTH_SHORT);
+			toast.show();
 			perder();
 		}
 		else {
+			plip.start();
 			int num = numMinas(fila, col);
 			if(num == 0) {
 				propagar(fila, col);
@@ -468,9 +478,14 @@ public class MainActivity extends Activity {
 		int fila = f;
 		
 		if(botones[fila][col].isSelected()) {
+			rep = MediaPlayer.create(this, R.raw.explosion);
+			rep.start();
+			Toast toast = Toast.makeText(context, R.string.lose, Toast.LENGTH_SHORT);
+			toast.show();
 			perder();
 		}
 		else {
+			plip.start();
 			int num = numMinas(fila, col);
 			if(num == 0) {
 				propagar(fila, col);
@@ -514,8 +529,25 @@ public class MainActivity extends Activity {
 		perder();
 		Button btnReiniciar = (Button) findViewById(R.id.btnReiniciar);
 		btnReiniciar.setBackgroundResource(R.drawable.ganar);
-		helper = new Handler_SQLite(this);
-		helper.insertar("Fernando", tiempo);
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		builder.setTitle(R.string.win);
+		final EditText nombre = new EditText(this);
+		builder.setView(nombre);
+		builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+		
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				helper.insertar(nombre.getText().toString(),tiempo,m);
+				helper.close();
+			}
+		});
+		builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+			@Override
+			public void onClick(DialogInterface dialog, int which) { }
+		});
+		
+		AlertDialog dialog = builder.create();
+		dialog.show();
 	}
 	
 	// Listener de cada boton
@@ -590,6 +622,9 @@ public class MainActivity extends Activity {
 		btnBanderas.setEnabled(false);
 		btnBanderas.setBackgroundResource(R.drawable.bandera);
 		btnBanderas.setTextColor(Color.rgb(255, 255, 255));
+		context = getApplicationContext();
+		helper = new Handler_SQLite(context);
+		plip = MediaPlayer.create(this, R.raw.plip);
 	}
 
 	@Override
@@ -601,13 +636,21 @@ public class MainActivity extends Activity {
 	
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch(item.getItemId()) {
-			case R.id.preferencias:
-				Intent intent2 = new Intent(this, SettingsActivity.class);
-				startActivity(intent2);
-				break;
-			default:
-				return false;
-			}
+		case R.id.about:
+			Intent intent = new Intent(this, About.class);
+			startActivity(intent);
+			break;
+		case R.id.preferencias:
+			Intent intent2 = new Intent(this, SettingsActivity.class);
+			startActivity(intent2);
+			break;
+		case R.id.ranking:
+			Intent intent3 = new Intent(this, RankingActivity.class);
+			startActivity(intent3);
+			break;
+		default:
+			return false;
+		}
 		return true;
 	}
 }

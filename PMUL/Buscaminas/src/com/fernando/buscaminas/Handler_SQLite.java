@@ -17,7 +17,7 @@ public class Handler_SQLite extends SQLiteOpenHelper {
 	@Override
 	public void onCreate(SQLiteDatabase bd) {
 		String query = "CREATE TABLE puntuacion (" + _ID + " INTEGER PRIMARY KEY, " +
-				"nombre VARCHAR(20), tiempo INTEGER(32))";
+				"nombre VARCHAR(20), tiempo INTEGER(32), minas INTEGER(32))";
 		bd.execSQL(query);
 	}
 	
@@ -27,40 +27,53 @@ public class Handler_SQLite extends SQLiteOpenHelper {
 		onCreate(bd);
 	}
 	
-	public void insertar(String nombre, double tiempo) {
-		Cursor c = this.getReadableDatabase().rawQuery("SELECT * FROM puntuacion ORDER BY tiempo ASC", null);
+	public void insertar(String nombre, double tiempo, int minas) {
+		Cursor c = this.getReadableDatabase().rawQuery("SELECT * FROM puntuacion ORDER BY tiempo, minas ASC", null);
 		int registros = c.getCount();
 		if(registros != 0) {
 			c.moveToLast();
 		}
-		if(registros < 10 || tiempo <= c.getInt(c.getColumnIndex("tiempo"))) {
+		if(registros < 20 || tiempo <= c.getInt(c.getColumnIndex("tiempo"))) {
 			ContentValues valores = new ContentValues();
 			valores.put("nombre", nombre);
 			valores.put("tiempo", tiempo);
+			valores.put("minas", minas);
 			this.getWritableDatabase().insert("puntuacion", null, valores);
-			if(c.getCount() > 9) {
+			if(c.getCount() > 19) {
 				String consulta = "DELETE FROM puntuacion WHERE tiempo = (SELECT MAX(tiempo) FROM puntuacion)";
 				this.getWritableDatabase().execSQL(consulta);
 			}
 		}
 	}
 	
-	public String[] leer() {
-		Cursor c = this.getReadableDatabase().rawQuery("SELECT * FROM puntuacion ORDER BY tiempo ASC", null);
-		String result[] = new String[c.getCount()];
-		int inom, itie;
+	public String[][] leer() {
+		Cursor c = this.getReadableDatabase().rawQuery("SELECT * FROM puntuacion ORDER BY tiempo, minas ASC", null);
+		String result[][] = new String[c.getCount()][3];
+		int inom, itie, imin;
 		
 		inom = c.getColumnIndex("nombre");
 		itie = c.getColumnIndex("tiempo");
+		imin = c.getColumnIndex("minas");
 		
 		c.moveToFirst();
 		
 		for(int i = 0; i < c.getCount(); i++) {
-			result[i] = i+1 + "\t" + c.getString(inom) + "\t" + c.getInt(itie)/1000.00 + "\n";
+			result[i][0] = c.getString(inom);
+			result[i][1] = String.valueOf(c.getInt(itie)/1000.00);
+			result[i][2] = String.valueOf(c.getInt(imin));
 			c.moveToNext();
 		}
 
 		return result;
+	}
+	
+	public void reset() {
+		String delete = "DROP TABLE IF EXISTS puntuacion";
+		String create = "CREATE TABLE puntuacion (" + _ID + " INTEGER PRIMARY KEY, " +
+				"nombre VARCHAR(20), tiempo INTEGER(32), minas INTEGER(32))";
+		
+		this.getWritableDatabase().execSQL(delete);
+		this.getWritableDatabase().execSQL(create);
 	}
 	
 }
