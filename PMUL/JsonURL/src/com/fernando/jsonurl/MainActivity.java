@@ -27,9 +27,7 @@ private View.OnClickListener gestor = new View.OnClickListener() {
 			URL params = null;
 			try {
 				params = new URL("http://comunikrte.es/estudiantes.json");
-			} catch (MalformedURLException e) {
-				e.printStackTrace();
-			}
+			} catch (MalformedURLException e) { e.printStackTrace(); }
 			ProgressBar pb = (ProgressBar) findViewById(R.id.progressBar1);
 			pb.setProgress(0);
 			new MiClase().execute(params);
@@ -52,6 +50,7 @@ private View.OnClickListener gestor = new View.OnClickListener() {
 	}
 
 class MiClase extends AsyncTask<URL, Integer, String> {
+		boolean fallo = false;
 		
 		protected void onPreExecute() {
 			Toast toast = Toast.makeText(context, "Descargando", Toast.LENGTH_SHORT);
@@ -74,7 +73,7 @@ class MiClase extends AsyncTask<URL, Integer, String> {
 				entrada.close();
 				
 			} catch(MalformedURLException mue) { mue.printStackTrace(); }
-			catch(IOException ioe) { ioe.printStackTrace(); }
+			catch(IOException ioe) { fallo = true; }
 			return result;
 		}
 		
@@ -85,9 +84,14 @@ class MiClase extends AsyncTask<URL, Integer, String> {
 		
 		protected void onPostExecute(String s)
 		{
-			ListView lista = (ListView) findViewById(R.id.listView1);
-			MyAdapter adaptador = new MyAdapter(context, R.layout.layoutmuestra, s);
-			lista.setAdapter(adaptador);	
+			if(fallo) {
+				Toast toast = Toast.makeText(context, "Error al conectar", Toast.LENGTH_SHORT);
+				toast.show();
+			} else {
+				ListView lista = (ListView) findViewById(R.id.listView1);
+				MyAdapter adaptador = new MyAdapter(context, R.layout.layoutmuestra, s);
+				lista.setAdapter(adaptador);
+			}
 		}
 	}
 }

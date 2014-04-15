@@ -4,7 +4,7 @@
 
 int N = 100000;
 int array[100000];
-int busqueda = 99999;
+int busqueda = 40000;
 int flag = 0;
 pthread_mutex_t mutex;
 

@@ -32,7 +32,9 @@ public class MyAdapter extends BaseAdapter {
 	@Override
 	public int getCount() {
 		// TODO Auto-generated method stub
-		return _estudiante.length();
+		try {
+			return _estudiante.length();
+		} catch(NullPointerException e) { return 0; }
 	}
 
 	@Override

@@ -22,13 +22,13 @@ void * fcn_hijo(void *arg) {
 }
 
 int main(int argc, char **argv) {
-    void * exit_status;
+    int exit_status[20];
     pthread_t id;
-    pthread_create(&id, NULL, fcn_hijo, &exit_status);
+    pthread_create(&id, NULL, fcn_hijo, (void *)exit_status);
     
     printf("Hola soy el padre!\n");
     
-    pthread_join(id, &exit_status);
+    pthread_join(id, (void)exit_status);
     
     printf("El mayor es: %d\n", *(int *) exit_status);
     
