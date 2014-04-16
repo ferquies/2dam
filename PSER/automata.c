@@ -9,6 +9,7 @@ void main() {
 	
 	printf("\t\t\tAutomata celular\n");
 	
+	srand(getpid());
 	for(i = 0; i < N; i++) { arr[i] = rand() % 2; }
 		
 	for(j = 0; j < N; j++) {
