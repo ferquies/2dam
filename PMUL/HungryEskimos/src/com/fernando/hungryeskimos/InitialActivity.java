@@ -19,7 +19,7 @@ public class InitialActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_initial);
 		
-		settings = getSharedPreferences("com.fernando.hungryskimos_preferences", Context.MODE_PRIVATE);
+		settings = getSharedPreferences("hungryskimos_preferences", Context.MODE_PRIVATE);
 		context = getApplicationContext();
 		
 		sound = settings.getString("sound", "true");
@@ -43,6 +43,15 @@ public class InitialActivity extends Activity {
 			public void onClick(View v) {
 				Intent intent_settings = new Intent(context, SettingsActivity.class);
 				startActivity(intent_settings);
+			}
+		});
+		
+		findViewById(R.id.button_play).setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent intent_login = new Intent(context, LoginActivity.class);
+				startActivity(intent_login);
 			}
 		});
 	}
