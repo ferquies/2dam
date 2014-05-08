@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Prueba</title>
-    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css">
   </head>
   <body>
     <div class="row">
