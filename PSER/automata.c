@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <omp.h>
 
-#define C 10000
+#define C 1000
 #define F 100
 
 void main() {
@@ -23,9 +23,9 @@ void main() {
 	//omp_set_num_threads(1);
     #pragma omp parallel
     {
-        for(k = 0; k < 1; k++) {
-            system("clear");
-            printf("\t\t\tAutomata celular\n");
+        for(k = 0; k < C; k++) {
+            //system("clear");
+            //printf("\t\t\tAutomata celular\n");
             for(j = 0; j < F; j++) { 
                 first = arr[0];
                 #pragma omp for
@@ -49,14 +49,16 @@ void main() {
 
                     arr[i] = aux;
 
-                    if(aux == 0)
-                        printf("|");
+                    /*if(aux == 0)
+                        printf("d");
                     else
-                        printf("@");
+                        printf("b");*/
+                    printf("%d", aux);
                 }
-                printf("\n");
+                //printf("\n");
             }
             usleep(120000);
         }
     }
+    printf("\n");
 }
