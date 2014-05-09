@@ -4,6 +4,10 @@
     } else {
         echo "Ha ocurrido un error al subir el fichero.";
     }
-    
-    echo "<html><head><meta http-equiv='refresh' content='2;url=index.php'></head></html>";
-?>  
+?> 
+
+<html>
+    <head>
+        <meta http-equiv='refresh' content='2;url=index.php'>
+    </head>
+</html>

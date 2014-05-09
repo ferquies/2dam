@@ -3,6 +3,7 @@
   <head>
     <title>Prueba</title>
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./style.css">
   </head>
   <body>
     <div class="row">

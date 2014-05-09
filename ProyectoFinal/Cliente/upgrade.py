@@ -5,10 +5,11 @@ from update import *
 d = "./Videos/"
 vids = "vids.txt"
 url = "http://localhost/proyectom/Videos/"
+
 if(not os.path.isdir(d)):
-    os.mkdir("./Videos")
-if(not os.path.isfile(vids)):
-    update()
+    os.mkdir(d)
+
+update()
 
 f = open(vids)
 files = []
