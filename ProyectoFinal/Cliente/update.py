@@ -4,4 +4,6 @@ def update():
     url = "http://localhost/proyectom/vids.txt"
     filename = "vids.txt"
     urllib.request.urlretrieve(url, filename)
-    print ("Update completed")
+    url = "http://localhost/proyectom/vids_alt.txt"
+    filename = "vids_alt.txt"
+    urllib.request.urlretrieve(url, filename)
