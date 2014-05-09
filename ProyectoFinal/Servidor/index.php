@@ -2,12 +2,8 @@
 <html>
   <head>
     <title>Prueba</title>
-<<<<<<< HEAD
-    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./style.css">
-=======
     <link rel="stylesheet" href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css">
->>>>>>> 0930a83e4a086b969efb9330901abf144eaef8c2
+    <link rel="stylesheet" href="./style.css">
   </head>
   <body>
     <div class="row">
