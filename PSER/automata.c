@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <omp.h>
 
-#define C 10000
+#define C 300
 #define F 10
 
 void binario(int num, int reg[], int i);
@@ -11,14 +11,16 @@ void main(int argc, char *argv[]) {
 	int arr[C];
 	int i, j, k, aux, first;
 	char cad[2];
-    char *p = argv[1];
-    int num = 0;
-    int longitud = strlen(p);
-    
-    if(longitud) {
+    int num;
+    if(argv[1]) {
+        char *p = argv[1];
+        int longitud = strlen(p);
+
         for(i = 0; i < longitud; i++) {
             num = 10 * num + p[i] - '0';
         }
+    } else {
+        num = 4;
     }
     
     /*---------Reglas---------*/
