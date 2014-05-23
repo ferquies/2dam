@@ -24,24 +24,22 @@ def actualizar(d, vids, url):
             name = l
             l = l.replace(" ", "%20")
             urllib.request.urlretrieve(url+l, d+name)
-            log.write(str(datetime.datetime.now()) + " - Downloaded " + d+l + "\n")
-            
+            log.write(str(datetime.datetime.now()) + " - Downloaded " + d+name + "\n")
+
 
     for l in factuales:
         if(l not in files):
             os.remove(d+l)
-            log.write(str(datetime.datetime.now()) + " - Deleted " + d+l + "\n")
-    
+            log.write(str(datetime.datetime.now()) + " - Deleted " + d+name + "\n")
+
     log.close()
 
 d = "./Videos/"
 vids = "vids.txt"
 url = "http://localhost/proyectom/Videos/"
-
-actualizar(d, vids, url)
-
 d2 = "./Videos_alt/"
 vids2 = "vids_alt.txt"
 url2 = "http://localhost/proyectom/Videos_alt/"
 
+actualizar(d, vids, url)
 actualizar(d2, vids2, url2)

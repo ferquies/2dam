@@ -1,21 +1,30 @@
 #include <stdio.h>
 #include <omp.h>
 
-#define C 1000
-#define F 100
+#define C 10000
+#define F 10
 
-void main() {
+void binario(int num, int reg[], int i);
+int calc_tam(int num);
+
+void main(int argc, char *argv[]) {
 	int arr[C];
 	int i, j, k, aux, first;
 	char cad[2];
+    char *p = argv[1];
+    int num = 0;
+    int longitud = strlen(p);
+    
+    if(longitud) {
+        for(i = 0; i < longitud; i++) {
+            num = 10 * num + p[i] - '0';
+        }
+    }
     
     /*---------Reglas---------*/
-    int regla[4];
-    regla[0] = 1;
-    regla[1] = 0;
-    regla[2] = 0;
-    regla[3] = 1;
+    int regla[calc_tam(num)];
 
+    binario(num, regla, 0);
 	srand(getpid());
 
 	for(i = 0; i < C; i++) { arr[i] = rand() % 2; }
@@ -24,8 +33,6 @@ void main() {
     #pragma omp parallel
     {
         for(k = 0; k < C; k++) {
-            //system("clear");
-            //printf("\t\t\tAutomata celular\n");
             for(j = 0; j < F; j++) { 
                 first = arr[0];
                 #pragma omp for
@@ -41,24 +48,37 @@ void main() {
                     int decimal = 2*cad[1]+cad[0];
             
                     aux = regla[decimal];
-                    
-                    /*if((cad[0] == '0') && (cad[1] == '0')) { aux = 0; caux = '@'; }
-                    if((cad[0] == '0') && (cad[1] == '1')) { aux = 1; caux = ' '; }
-                    if((cad[0] == '1') && (cad[1] == '0')) { aux = 0; caux = '|'; }
-                    if((cad[0] == '1') && (cad[1] == '1')) { aux = 1; caux = '_'; }*/
-
                     arr[i] = aux;
 
-                    /*if(aux == 0)
-                        printf("d");
-                    else
-                        printf("b");*/
                     printf("%d", aux);
                 }
-                //printf("\n");
             }
-            usleep(120000);
         }
     }
     printf("\n");
+}
+
+void binario(int num, int reg[], int i)
+{
+    int aux;
+   
+    if(num == 0)
+        return;
+
+    aux = num % 2;
+    num = num / 2;
+    reg[i] = aux;
+    i++;
+
+    binario(num, reg, i);
+}
+
+int calc_tam(int num) {
+    int count = 0;
+    while(1) {
+        num /= 2;
+        count++;
+
+        if(!num) { return count; }
+    }
 }
