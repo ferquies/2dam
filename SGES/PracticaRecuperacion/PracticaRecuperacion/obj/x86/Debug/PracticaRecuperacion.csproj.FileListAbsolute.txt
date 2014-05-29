@@ -1,0 +1,18 @@
+C:\Documents and Settings\Fer\Configuración local\Datos de programa\Temporary Projects\PracticaRecuperacion\bin\Debug\PracticaRecuperacion.exe
+C:\Documents and Settings\Fer\Configuración local\Datos de programa\Temporary Projects\PracticaRecuperacion\bin\Debug\PracticaRecuperacion.pdb
+C:\Documents and Settings\Fer\Configuración local\Datos de programa\Temporary Projects\PracticaRecuperacion\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Fer\Configuración local\Datos de programa\Temporary Projects\PracticaRecuperacion\obj\x86\Debug\PracticaRecuperacion.Form1.resources
+C:\Documents and Settings\Fer\Configuración local\Datos de programa\Temporary Projects\PracticaRecuperacion\obj\x86\Debug\PracticaRecuperacion.Properties.Resources.resources
+C:\Documents and Settings\Fer\Configuración local\Datos de programa\Temporary Projects\PracticaRecuperacion\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Documents and Settings\Fer\Configuración local\Datos de programa\Temporary Projects\PracticaRecuperacion\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Documents and Settings\Fer\Configuración local\Datos de programa\Temporary Projects\PracticaRecuperacion\obj\x86\Debug\PracticaRecuperacion.exe
+C:\Documents and Settings\Fer\Configuración local\Datos de programa\Temporary Projects\PracticaRecuperacion\obj\x86\Debug\PracticaRecuperacion.pdb
+C:\Documents and Settings\Fer\mis documentos\visual studio 2010\Projects\PracticaRecuperacion\PracticaRecuperacion\obj\x86\Debug\PracticaRecuperacion.exe
+C:\Documents and Settings\Fer\mis documentos\visual studio 2010\Projects\PracticaRecuperacion\PracticaRecuperacion\obj\x86\Debug\PracticaRecuperacion.pdb
+C:\Documents and Settings\Fer\mis documentos\visual studio 2010\Projects\PracticaRecuperacion\PracticaRecuperacion\bin\Debug\PracticaRecuperacion.exe
+C:\Documents and Settings\Fer\mis documentos\visual studio 2010\Projects\PracticaRecuperacion\PracticaRecuperacion\bin\Debug\PracticaRecuperacion.pdb
+C:\Documents and Settings\Fer\mis documentos\visual studio 2010\Projects\PracticaRecuperacion\PracticaRecuperacion\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Fer\mis documentos\visual studio 2010\Projects\PracticaRecuperacion\PracticaRecuperacion\obj\x86\Debug\PracticaRecuperacion.Form1.resources
+C:\Documents and Settings\Fer\mis documentos\visual studio 2010\Projects\PracticaRecuperacion\PracticaRecuperacion\obj\x86\Debug\PracticaRecuperacion.Properties.Resources.resources
+C:\Documents and Settings\Fer\mis documentos\visual studio 2010\Projects\PracticaRecuperacion\PracticaRecuperacion\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Documents and Settings\Fer\mis documentos\visual studio 2010\Projects\PracticaRecuperacion\PracticaRecuperacion\obj\x86\Debug\GenerateResource.write.1.tlog
