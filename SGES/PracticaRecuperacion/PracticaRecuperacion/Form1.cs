@@ -11,179 +11,98 @@ namespace PracticaRecuperacion
 {
     public partial class Form1 : Form
     {
+        Cash cash;
+        List<Form> form_ticket = new List<Form>();
+        List<Product> stock = new List<Product>();
+
         public Form1()
         {
             InitializeComponent();
-            /*Cash cash;
-            DialogResult open = MessageBox.Show("¿Abrir caja ahora?", "TPV", MessageBoxButtons.YesNo);
-            if(open == DialogResult.Yes)
             cash = new Cash(200);
-            if (!cash.Open())
-                MessageBox.Show("Error al abrir la caja", "TPV", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            */
-        }
-
-        /*Ticket ticket = new Ticket();
-        Product cocacola = new Product("Coca-Cola", "Refresco de cola con gas", "C:/Documents and Settings/Fer/Mis documentos/Visual Studio 2010/Projects/PracticaRecuperacion/PracticaRecuperacion/images/cocacola.gif", "C:/Documents and Settings/Fer/Mis documentos/Visual Studio 2010/Projects/PracticaRecuperacion/PracticaRecuperacion/images/cocacola.gif", 1.5, 21, 10);
-        Product cocacola2 = new Product("Coca-Cola", "Refresco de cola con gas", "C:/Documents and Settings/Fer/Mis documentos/Visual Studio 2010/Projects/PracticaRecuperacion/PracticaRecuperacion/images/cocacola.gif", "C:/Documents and Settings/Fer/Mis documentos/Visual Studio 2010/Projects/PracticaRecuperacion/PracticaRecuperacion/images/cocacola.gif", 1.7, 21, 10);
-        */
-    }
-    class Product
-    {
-        private string name;
-        private string description;
-        private Image photo;
-        private Image tpv_image;
-        private double prize;
-        private int iva;
-        private int units;
-
-        public Product(string name, string description, string photo, string tpv_image, double prize, int iva, int units)
-        {
-            this.name = name;
-            this.description = description;
-            this.photo = Image.FromFile(photo);
-            this.tpv_image = Image.FromFile(tpv_image);
-            this.prize = prize;
-            this.iva = iva;
-            this.units = units;
-        }
-
-        public string Name
-        {
-            get { return name; }
-            set { name = value; }
-        }
-        public string Desciption
-        {
-            get { return description; }
-            set { description = value; }
-        }
-        public Image Photo
-        {
-            get { return photo; }
-            set { photo = value; }
-        }
-        public Image TPV_Image
-        {
-            get { return tpv_image; }
-            set { tpv_image = value; }
-        }
-        public double Prize
-        {
-            get { return prize; }
-            set { prize = value; }
-        }
-        public int IVA
-        {
-            get { return iva; }
-            set { iva = value; }
-        }
-        public int Units
-        {
-            get { return units; }
-            set { units = value; }
-        }
-    }
-    class Ticket
-    {
-        private List<Product> products;
-        private bool opened = true;
-
-        public Ticket() { products = new List<Product>(); }
-        
-        public bool Add(Product product)
-        {
-            bool result = false;
-
-            if (opened)
+            stock.Add(new Product("Coca-cola", "Refresco de cola", Image.FromFile(@"C:\Documents and Settings\Fer\mis documentos\visual studio 2010\Projects\PracticaRecuperacion\PracticaRecuperacion\images\cocacola.gif"), Image.FromFile(@"C:\Documents and Settings\Fer\mis documentos\visual studio 2010\Projects\PracticaRecuperacion\PracticaRecuperacion\images\cocacola.gif"), 1.25, 21, 40));
+            stock.Add(new Product("Coca-cola Light", "Refresco de cola light", Image.FromFile(@"C:\Documents and Settings\Fer\mis documentos\visual studio 2010\Projects\PracticaRecuperacion\PracticaRecuperacion\images\cocacola.gif"), Image.FromFile(@"C:\Documents and Settings\Fer\mis documentos\visual studio 2010\Projects\PracticaRecuperacion\PracticaRecuperacion\images\cocacola.gif"), 1.5, 21, 20));
+            DialogResult open = MessageBox.Show("¿Abrir caja ahora?",
+                "TPV", MessageBoxButtons.YesNo);
+            if (open == DialogResult.Yes)
             {
-                if (product.Units > 0)
+                if (!cash.Open())
                 {
-                    products.Add(product);
-                    product.Units--;
-                    result = true;
+                    MessageBox.Show("Error al abrir la caja",
+                        "TPV", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    btnOpenCash.Enabled = false;
                 }
             }
-
-            return result;
-        }
-        public void Remove(Product product)
-        {
-            if (opened)
+            else
             {
-                products.Remove(product);
-                product.Units++;
+                btnCloseCash.Enabled = false;
             }
-        }
-        public int Count() { return products.Count; }
-        public double Bill()
-        {
-            double bill = 0;
-            for (int i = 0; i < products.Count(); i++)
+            for (int i = 0; i < 12; i++)
             {
-                bill += products[i].Prize;
+                form_ticket.Add(new Form2());
+                form_ticket[i].Text = "Mesa " + (i + 1);
+                form_ticket[i].Tag = (i + 1).ToString();
             }
-            return bill;
-        }
-        public double BillTax()
-        {
-            double bill = 0;
-            for (int i = 0; i < products.Count(); i++)
-            {
-                bill += products[i].Prize;
-                bill += products[i].Prize / 100 * products[i].IVA;
-            }
-            return bill;
-        }
-    }
-    class Cash
-    {
-        private bool status;
-        private double amount;
-        private double default_amount;
-        private List<Ticket> ticket_list = new List<Ticket>();
-
-        public Cash(int default_amount)
-        {
-            this.status = false;
-            this.default_amount = default_amount;
         }
 
-        public bool Open()
+        private void label_Click(object sender, EventArgs e)
         {
-            bool result = false;
-            if (!this.status)
+            if (cash.Status)
             {
-                this.status = true;
-                this.amount = this.default_amount;
-                result = true;
+                Label label = (Label)sender;
+                int tag = int.Parse(label.Tag.ToString());
+                try
+                {
+                    form_ticket[tag].Show();
+                }
+                catch
+                {
+                    form_ticket[tag] = new Form2();
+                    form_ticket[tag].Text = "Mesa " + (tag + 1);
+                    form_ticket[tag].Show();
+                }
             }
-            return result;
+            else
+            {
+                DialogResult result = MessageBox.Show("La caja esta cerrada.\n¿Desea abrirla?",
+                    "TPV", MessageBoxButtons.YesNo, MessageBoxIcon.Hand);
+                if (result == DialogResult.Yes)
+                {
+                    cash.Open();
+                    btnOpenCash.Enabled = false;
+                    btnCloseCash.Enabled = true;
+                }
+            }
         }
-        public bool Close()
+
+        private void btnOpenCash_Click(object sender, EventArgs e)
         {
-            bool result = false;
-            if (this.status)
+            if (!cash.Open())
             {
-                this.amount = this.default_amount;
-                this.ticket_list = null;
-                result = true;
+                MessageBox.Show("Error al abrir la caja",
+                    "TPV", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            return result;
+            else
+            {
+                btnOpenCash.Enabled = false;
+                btnCloseCash.Enabled = true;
+            }
         }
-        public bool Charge(Ticket ticket)
+
+        private void btnCloseCash_Click(object sender, EventArgs e)
         {
-            bool result = false;
-            bool allow = true;
-            for (int t = 0; t < this.ticket_list.Count; t++)
+            if (!cash.Close())
             {
-                if (this.ticket_list[t] == ticket)
-                    allow = false;
+                MessageBox.Show("Error al cerrar la caja",
+                    "TPV", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            if(allow)
-                this.amount += ticket.BillTax();
-            return result;
+            else
+            {
+                btnOpenCash.Enabled = true;
+                btnCloseCash.Enabled = false;
+            }
         }
     }
 }
