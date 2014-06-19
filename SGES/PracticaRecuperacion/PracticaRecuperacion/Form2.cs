@@ -6,18 +6,34 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Data.OleDb;
 
 namespace PracticaRecuperacion
 {
     public partial class Form2 : Form
     {
         Ticket ticket = new Ticket();
-        Product cocacola = new Product("Coca-cola", "Refresco de cola", Image.FromFile(@"C:\Documents and Settings\Fer\mis documentos\visual studio 2010\Projects\PracticaRecuperacion\PracticaRecuperacion\images\cocacola.gif"), Image.FromFile(@"C:\Documents and Settings\Fer\mis documentos\visual studio 2010\Projects\PracticaRecuperacion\PracticaRecuperacion\images\cocacola.gif"), 1.5, 21, 10);
+        OleDbConnection conn = null;
+        OleDbCommand cmd;
+        OleDbCommand cmd_update;
+
         public Form2()
         {
             InitializeComponent();
             if(this.Tag != null)
                 labelMesa.Text = "Mesa " + this.Tag.ToString();
+
+            string connection = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\products.mdb";
+            conn = new OleDbConnection(connection);
+            try
+            {
+                conn.Open();
+            }
+            catch
+            {
+                MessageBox.Show("Se ha producido un error al conectar con la base de datos.",
+                    "TPV", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void buttonProduct_Click(object sender, EventArgs e)
@@ -25,12 +41,43 @@ namespace PracticaRecuperacion
             if (ticket.Opened)
             {
                 if (ticket != null)
-                    ticket.Add(cocacola);
-                ListViewItem lvi = new ListViewItem();
-                /*lvi.SubItems.Add(cocacola.Name);
-                lvi.SubItems.Add(cocacola.Prize.ToString());*/
-                lvi.Text = cocacola.Name;
-                listBox1.Items.Add(lvi);
+                {
+                    Button button = (Button)sender;
+                    int tag;
+                    if (button.Tag != null)
+                        tag = int.Parse(button.Tag.ToString());
+                    else
+                        tag = -1;
+                    cmd = new OleDbCommand();
+                    cmd.Connection = conn;
+                    cmd.CommandText = "Select * from Products where Id = " + tag.ToString();
+                    OleDbDataReader dataReader = cmd.ExecuteReader();
+                    if (dataReader.HasRows)
+                    {
+                        dataReader.Read();
+                        if (int.Parse(dataReader["units"].ToString()) > 0)
+                        {
+                            dataGridView1.Rows.Add(dataReader["name"], dataReader["prize"]);
+                            ticket.Add(new Product(dataReader["name"].ToString(),
+                                dataReader["description"].ToString(),
+                                Image.FromFile(dataReader["photo"].ToString()),
+                                Image.FromFile(dataReader["tpv_image"].ToString()),
+                                double.Parse(dataReader["prize"].ToString()),
+                                int.Parse(dataReader["iva"].ToString()),
+                                int.Parse(dataReader["units"].ToString())));
+                            cmd_update = new OleDbCommand();
+                            cmd_update.Connection = conn;
+                            cmd_update.CommandText = "Update Products Set Units = " + (int.Parse(dataReader["units"].ToString()) - 1) + " Where Id = " + tag.ToString();
+                            cmd_update.ExecuteNonQuery();
+                        }
+                        else
+                        {
+                            MessageBox.Show("No quedan unidades de este producto",
+                                "TPV", MessageBoxButtons.OK,
+                                MessageBoxIcon.Exclamation);
+                        }
+                    }
+                }
             }
         }
 
@@ -41,6 +88,8 @@ namespace PracticaRecuperacion
                 btnCerrarPedido.Enabled = false;
                 labelTotal.Text = ticket.BillTax().ToString();
                 ticket.Opened = false;
+                conn.Close();
+                Form1.cash.Charge(ticket);
             }
         }
 
@@ -58,3 +107,4 @@ namespace PracticaRecuperacion
         }
     }
 }
+/*Hola*/

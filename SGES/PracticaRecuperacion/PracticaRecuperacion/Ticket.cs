@@ -5,7 +5,7 @@ using System.Text;
 
 namespace PracticaRecuperacion
 {
-    class Ticket
+    public class Ticket
     {
         private List<Product> products;
         private bool opened = true;

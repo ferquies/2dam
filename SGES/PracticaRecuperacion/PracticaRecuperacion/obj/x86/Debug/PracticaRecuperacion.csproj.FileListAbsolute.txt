@@ -17,3 +17,5 @@ C:\Documents and Settings\Fer\mis documentos\visual studio 2010\Projects\Practic
 C:\Documents and Settings\Fer\mis documentos\visual studio 2010\Projects\PracticaRecuperacion\PracticaRecuperacion\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\Documents and Settings\Fer\mis documentos\visual studio 2010\Projects\PracticaRecuperacion\PracticaRecuperacion\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\Documents and Settings\Fer\mis documentos\visual studio 2010\Projects\PracticaRecuperacion\PracticaRecuperacion\obj\x86\Debug\PracticaRecuperacion.Form2.resources
+C:\Documents and Settings\Fer\mis documentos\visual studio 2010\Projects\PracticaRecuperacion\PracticaRecuperacion\bin\Debug\products.mdb
+C:\Documents and Settings\Fer\mis documentos\visual studio 2010\Projects\PracticaRecuperacion\PracticaRecuperacion\bin\Debug\PracticaRecuperacion.exe.config

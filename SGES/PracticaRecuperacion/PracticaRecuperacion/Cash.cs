@@ -5,7 +5,7 @@ using System.Text;
 
 namespace PracticaRecuperacion
 {
-    class Cash
+    public class Cash
     {
         private bool status;
         private double amount;
@@ -18,6 +18,14 @@ namespace PracticaRecuperacion
             this.default_amount = default_amount;
         }
 
+        public double Amount
+        {
+            get { return this.amount; }
+        }
+        public double Default_Amount
+        {
+            get { return this.default_amount; }
+        }
         public bool Status
         {
             get { return this.status; }

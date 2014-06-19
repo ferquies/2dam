@@ -60,16 +60,23 @@ namespace PracticaRecuperacion.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap cocacola {
+        internal static System.Drawing.Bitmap cocacola1 {
             get {
-                object obj = ResourceManager.GetObject("cocacola", resourceCulture);
+                object obj = ResourceManager.GetObject("cocacola1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap mesa {
+        internal static System.Drawing.Bitmap fantalimon {
             get {
-                object obj = ResourceManager.GetObject("mesa", resourceCulture);
+                object obj = ResourceManager.GetObject("fantalimon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap fantanaranja {
+            get {
+                object obj = ResourceManager.GetObject("fantanaranja", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

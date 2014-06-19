@@ -6,7 +6,7 @@ using System.Drawing;
 
 namespace PracticaRecuperacion
 {
-    class Product
+    public class Product
     {
         private string name;
         private string description;
